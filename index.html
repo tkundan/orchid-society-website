@@ -1,312 +1,884 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orchid Co-operative Housing Society Limited</title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background: #f7f7f7;
-}
+  :root {
+    --green-dark:  #1B4332;
+    --green-mid:   #2D6A4F;
+    --green-soft:  #40916C;
+    --green-light: #B7E4C7;
+    --green-pale:  #D8F3DC;
+    --gold:        #C9A227;
+    --gold-light:  #FFF3CD;
+    --text-dark:   #1a1a2e;
+    --text-mid:    #3d3d5c;
+    --text-muted:  #6c757d;
+    --white:       #ffffff;
+    --off-white:   #f8faf9;
+    --border:      #e0ebe5;
+  }
 
-header {
-    background: #2E5E4E;
-    color: white;
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-soft) 100%);
+    color: var(--white);
     text-align: center;
-    padding: 60px 20px;
-}
+    padding: 90px 20px 70px;
+    position: relative;
+    overflow: hidden;
+  }
 
-header h1 {
-    font-size: 2.5rem;
-}
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+  }
 
-header p {
-    margin-top: 10px;
-    font-size: 1.1rem;
-}
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.3);
+    color: var(--green-light);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+  }
 
-nav {
-    background: #23483B;
-    padding: 15px;
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+  }
+
+  .hero-tagline {
+    font-size: 1.05rem;
+    font-weight: 300;
+    opacity: 0.88;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-loc {
+    font-size: 0.88rem;
+    opacity: 0.65;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 6px;
+  }
+
+  .hero-loc svg { width: 14px; height: 14px; fill: currentColor; }
+
+  .hero-strip {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 44px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(255,255,255,0.18);
+  }
+
+  .hero-stat { text-align: center; }
+  .hero-stat strong { display: block; font-size: 1.7rem; font-weight: 700; color: var(--white); }
+  .hero-stat span { font-size: 0.78rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--green-dark);
     position: sticky;
     top: 0;
-    z-index: 999;
-}
+    z-index: 1000;
+    border-bottom: 2px solid var(--gold);
+  }
 
-nav ul {
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    list-style: none;
-}
+  }
 
-nav ul li {
-    margin: 5px 15px;
-}
-
-nav ul li a {
-    color: white;
+  nav a {
+    color: rgba(255,255,255,0.8);
     text-decoration: none;
-    font-weight: bold;
-}
-
-.section {
-    max-width: 1100px;
-    margin: 30px auto;
-    padding: 40px;
-    background: white;
-    border-radius: 10px;
-}
-
-.section h2 {
-    color: #2E5E4E;
-    margin-bottom: 20px;
-}
-
-.notice-box {
-    background: #fff7e5;
-    border-left: 5px solid #C9A227;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #f5f5f5;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.btn {
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 16px 16px;
     display: inline-block;
-    margin-top: 10px;
-    padding: 12px 20px;
-    background: #2E5E4E;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+  }
 
-.btn:hover {
-    background: #23483B;
-}
+  nav a:hover {
+    color: var(--green-light);
+    border-bottom-color: var(--gold);
+  }
 
-.gallery-placeholder {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-    gap: 15px;
-}
-
-.placeholder {
-    height: 180px;
-    background: #ddd;
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #666;
-}
-
-footer {
-    background: #2E5E4E;
-    color: white;
+  /* ── ALERT BANNER ── */
+  .alert-banner {
+    background: var(--gold);
+    color: #3B2800;
     text-align: center;
-    padding: 30px;
-    margin-top: 40px;
-}
+    padding: 12px 20px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
 
-.contact-box {
-    background: #f5f5f5;
-    padding: 20px;
+  .alert-banner .alert-icon {
+    width: 18px; height: 18px;
+    background: #3B2800;
+    border-radius: 50%;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  /* ── LAYOUT ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+
+  section:nth-child(even) { background: var(--white); }
+  section:nth-child(odd)  { background: var(--off-white); }
+
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--green-soft);
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+    font-weight: 700;
+    color: var(--green-dark);
+    margin-bottom: 14px;
+    line-height: 1.25;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    max-width: 580px;
+    margin-bottom: 40px;
+    font-size: 0.97rem;
+  }
+
+  .divider {
+    width: 48px;
+    height: 3px;
+    background: var(--gold);
+    border-radius: 2px;
+    margin: 12px 0 28px;
+  }
+
+  /* ── CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 22px;
+  }
+
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 26px;
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 8px 30px rgba(27,67,50,0.1);
+    transform: translateY(-2px);
+  }
+
+  .card-icon {
+    width: 46px; height: 46px;
+    background: var(--green-pale);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .card-icon svg { width: 22px; height: 22px; stroke: var(--green-mid); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+  .card h3 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .card p {
+    font-size: 0.88rem;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 10px 20px;
+    background: var(--green-dark);
+    color: var(--white);
+    text-decoration: none;
     border-radius: 8px;
-}
+    font-size: 0.84rem;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
 
-@media(max-width:768px){
-    header h1 {
-        font-size: 2rem;
-    }
+  .btn:hover { background: var(--green-soft); }
 
-    .section {
-        padding: 25px;
-    }
-}
+  .btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--green-dark);
+    border: 1.5px solid var(--green-dark);
+  }
+
+  .btn-outline:hover { background: var(--green-pale); color: var(--green-dark); }
+
+  /* ── ABOUT ── */
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  @media(max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 30px; } }
+
+  .about-text p { color: var(--text-mid); margin-bottom: 16px; font-size: 0.97rem; }
+
+  .about-highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .highlight-pill {
+    background: var(--green-pale);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 0.84rem;
+  }
+
+  .highlight-pill strong {
+    display: block;
+    font-weight: 600;
+    color: var(--green-dark);
+    font-size: 1rem;
+    margin-bottom: 3px;
+  }
+
+  .highlight-pill span { color: var(--text-muted); }
+
+  .rera-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #eaf7ef;
+    border: 1px solid var(--green-light);
+    border-radius: 6px;
+    padding: 8px 14px;
+    font-size: 0.78rem;
+    color: var(--green-dark);
+    font-weight: 500;
+    margin-top: 18px;
+  }
+
+  .rera-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-soft); flex-shrink: 0; }
+
+  /* ── NOTICE BOARD ── */
+  .urgent-notice {
+    background: var(--gold-light);
+    border: 1.5px solid var(--gold);
+    border-radius: 12px;
+    padding: 22px 26px;
+    margin-bottom: 36px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .urgent-icon {
+    width: 40px; height: 40px;
+    background: var(--gold);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    font-size: 1.1rem;
+  }
+
+  .urgent-notice h4 { font-weight: 600; color: #7a5100; margin-bottom: 4px; font-size: 0.95rem; }
+  .urgent-notice p { color: #6b4400; font-size: 0.88rem; }
+
+  .deadline-badge {
+    display: inline-block;
+    background: #d4380d;
+    color: white;
+    border-radius: 5px;
+    padding: 2px 10px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    margin-left: 6px;
+  }
+
+  /* ── COMMITTEE ── */
+  .committee-banner {
+    background: var(--green-dark);
+    color: var(--white);
+    border-radius: 14px;
+    padding: 34px 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .committee-banner h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 6px; }
+  .committee-banner p  { font-size: 0.88rem; opacity: 0.75; }
+
+  .member-count {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: var(--green-light);
+    line-height: 1;
+  }
+
+  .member-count small { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; opacity: 0.7; display: block; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
+
+  .role-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-top: 28px;
+  }
+
+  .role-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .role-avatar {
+    width: 38px; height: 38px;
+    background: var(--green-pale);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .role-item p { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
+  .role-item span { font-size: 0.78rem; color: var(--text-muted); }
+
+  /* ── EVENTS ── */
+  .event-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-left: 5px solid var(--green-soft);
+    border-radius: 14px;
+    padding: 28px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    max-width: 680px;
+  }
+
+  .event-date-box {
+    background: var(--green-pale);
+    border-radius: 10px;
+    padding: 12px 18px;
+    text-align: center;
+    flex-shrink: 0;
+  }
+
+  .event-date-box strong { display: block; font-size: 1.6rem; font-weight: 700; color: var(--green-dark); line-height: 1; }
+  .event-date-box span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-soft); font-weight: 600; }
+
+  .event-body h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
+  .event-body p { font-size: 0.88rem; color: var(--text-muted); }
+
+  .event-tag {
+    display: inline-block;
+    background: var(--green-pale);
+    color: var(--green-dark);
+    border-radius: 6px;
+    padding: 3px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+
+  /* ── FACILITIES ── */
+  .under-construction {
+    background: var(--off-white);
+    border: 1.5px dashed var(--border);
+    border-radius: 14px;
+    padding: 50px;
+    text-align: center;
+    color: var(--text-muted);
+  }
+
+  .under-construction svg { width: 40px; height: 40px; stroke: var(--border); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 14px; }
+
+  /* ── GALLERY ── */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+  }
+
+  .gallery-ph {
+    height: 190px;
+    background: var(--green-pale);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--green-mid);
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border: 1.5px dashed var(--green-light);
+  }
+
+  .gallery-ph svg { width: 26px; height: 26px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* ── CONTACT ── */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+  }
+
+  .contact-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+
+  .contact-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; color: var(--text-dark); }
+
+  .contact-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-pale);
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin-top: 14px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--green-dark);
+    text-decoration: none;
+  }
+
+  .contact-chip svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+  .emergency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #fff0f0;
+    color: #c0392b;
+    border: 1px solid #ffcccc;
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--green-dark);
+    color: rgba(255,255,255,0.7);
+    padding: 50px 20px 30px;
+    text-align: center;
+  }
+
+  footer h3 {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+
+  .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 22px 0; }
+  .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--green-light); }
+
+  footer hr { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 22px auto; max-width: 600px; }
+  footer small { font-size: 0.78rem; opacity: 0.5; }
 </style>
 </head>
-
 <body>
 
-<header>
-    <h1>Orchid Co-operative Housing Society Limited</h1>
-    <p>A Vibrant Residential Community Since 2023</p>
-    <p>Kasarvadawali, Thane</p>
+<!-- ALERT -->
+<div class="alert-banner">
+  <div class="alert-icon">!</div>
+  <span>⏰ Action Required: Complete Face Scan Entry Registration before <strong>31 May 2026</strong></span>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-badge">🌿 Est. 2023 · Kasarvadawali, Thane</div>
+  <h1>Orchid Co-operative<br>Housing Society Limited</h1>
+  <p class="hero-tagline">A Vibrant Residential Community Since 2023</p>
+  <p class="hero-loc">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"/></svg>
+    Mahavir Kalpavruksha, Ghodbunder Road, Thane West – 400615
+  </p>
+  <div class="hero-strip">
+    <div class="hero-stat"><strong>7</strong><span>Committee Members</span></div>
+    <div class="hero-stat"><strong>2023</strong><span>Established</span></div>
+    <div class="hero-stat"><strong>J Wing</strong><span>Orchid Tower</span></div>
+  </div>
 </header>
 
+<!-- NAV -->
 <nav>
-    <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#notice">Notices</a></li>
-        <li><a href="#committee">Committee</a></li>
-        <li><a href="#facilities">Facilities</a></li>
-        <li><a href="#events">Events</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#notices">Notices</a>
+    <a href="#committee">Committee</a>
+    <a href="#facilities">Facilities</a>
+    <a href="#events">Events</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
-<section id="about" class="section">
-    <h2>About Orchid Society</h2>
-
-    <p>
-        Orchid Co-operative Housing Society Limited is a residential community
-        located within the Mahavir Kalpavruksha township at Kasarvadawali, Thane.
-        Established in 2023, the society is home to a vibrant community of families
-        and professionals who share a commitment to safe, comfortable, and harmonious living.
-    </p>
-
-    <br>
-
-    <p>
-        This portal serves as a central platform for residents to access notices,
-        submit complaints, stay informed about community activities, and connect
-        with the society committee.
-    </p>
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="section-label">Who We Are</p>
+        <h2>About Orchid Society</h2>
+        <div class="divider"></div>
+        <p>Orchid Co-operative Housing Society Limited is a proud residential community nestled within the prestigious <strong>Mahavir Kalpavruksha</strong> township by DSS Group — located in the heart of Kasarvadawali, Ghodbunder Road, Thane West.</p>
+        <p>Established in 2023, we are home to a thriving community of families and professionals committed to safe, harmonious, and comfortable living. The Orchid tower is part of a large integrated township offering 1 BHK and 2 BHK apartments with modern design and top-quality specifications.</p>
+        <p>This portal is our residents' central hub — for notices, complaint registration, event updates, and connecting with the managing committee.</p>
+        <div class="rera-tag">
+          <span class="rera-dot"></span>
+          RERA Registered · J Wing: P51700013805 &amp; P51700019337
+        </div>
+      </div>
+      <div>
+        <div class="about-highlights">
+          <div class="highlight-pill">
+            <strong>1 &amp; 2 BHK</strong>
+            <span>Spacious apartments</span>
+          </div>
+          <div class="highlight-pill">
+            <strong>15+ Floors</strong>
+            <span>High-rise living</span>
+          </div>
+          <div class="highlight-pill">
+            <strong>2000+</strong>
+            <span>Flats in complex</span>
+          </div>
+          <div class="highlight-pill">
+            <strong>5 min</strong>
+            <span>From Ghodbunder Rd</span>
+          </div>
+          <div class="highlight-pill">
+            <strong>Clubhouse</strong>
+            <span>Lifestyle amenities</span>
+          </div>
+          <div class="highlight-pill">
+            <strong>24×7</strong>
+            <span>Power backup &amp; security</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="notice" class="section">
-    <h2>Announcements & Notice Board</h2>
+<!-- NOTICE BOARD -->
+<section id="notices">
+  <div class="container">
+    <p class="section-label">Important Updates</p>
+    <h2>Announcements &amp; Notice Board</h2>
+    <div class="divider"></div>
 
-    <div class="notice-box">
-        <strong>Important Notice:</strong><br><br>
-        All residents are requested to complete their Face Scan Entry Registration
-        before <strong>31 May 2026</strong>.
+    <div class="urgent-notice">
+      <div class="urgent-icon">⚠️</div>
+      <div>
+        <h4>Urgent: Face Scan Registration Deadline <span class="deadline-badge">31 May 2026</span></h4>
+        <p>All residents are requested to complete their biometric face scan entry registration before 31st May 2026. Please visit the security office or use the registration link below.</p>
+      </div>
     </div>
 
-    <br>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Register Complaint</h3>
-            <p>Submit maintenance or society-related complaints.</p>
-            <a href="#" class="btn">Open Form</a>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M17 3H7a2 2 0 00-2 2v16l3-2 2 2 2-2 2 2 2-2 3 2V5a2 2 0 00-2-2z"/></svg>
         </div>
+        <h3>Register a Complaint</h3>
+        <p>Submit maintenance issues, society concerns, or any grievances directly to the committee.</p>
+        <a href="#" class="btn">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Open Form
+        </a>
+      </div>
 
-        <div class="card">
-            <h3>Biometric Registration</h3>
-            <p>Register for face scan and biometric access.</p>
-            <a href="#" class="btn">Register</a>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
         </div>
+        <h3>Biometric Registration</h3>
+        <p>Register your face scan for secure building entry access. All residents must enrol before the deadline.</p>
+        <a href="#" class="btn">
+          <svg viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          Register Now
+        </a>
+      </div>
 
-        <div class="card">
-            <h3>Important Email IDs</h3>
-            <p>Official Society Email</p>
-            <a href="mailto:orchidjwing@gmail.com" class="btn">
-                orchidjwing@gmail.com
-            </a>
+      <div class="card">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" rx="2"/><path d="M8 10l4 4 4-4"/></svg>
         </div>
-
+        <h3>Important Email IDs</h3>
+        <p>Official contact for society correspondence, queries, and resident communication.</p>
+        <a href="mailto:orchidjwing@gmail.com" class="btn">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 4l8 9 8-9"/></svg>
+          orchidjwing@gmail.com
+        </a>
+      </div>
     </div>
+  </div>
 </section>
 
-<section id="committee" class="section">
+<!-- COMMITTEE -->
+<section id="committee">
+  <div class="container">
+    <p class="section-label">Leadership</p>
     <h2>Managing Committee</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Our society is managed by a dedicated 7-member Core Committee elected to serve the residents. Full committee details will be updated shortly.</p>
 
-    <p>
-        The society is currently managed by a dedicated Core Committee consisting
-        of 7 members.
-    </p>
+    <div class="committee-banner">
+      <div>
+        <h3>Core Committee 2023–24</h3>
+        <p>Serving the residents of Orchid Co-op Housing Society</p>
+        <div style="margin-top:16px;">
+          <a href="mailto:orchidjwing@gmail.com" class="btn btn-outline" style="border-color: var(--green-light); color: var(--green-light);">
+            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 4l8 9 8-9"/></svg>
+            orchidjwing@gmail.com
+          </a>
+        </div>
+      </div>
+      <div>
+        <div class="member-count">7<small>Core Members</small></div>
+      </div>
+    </div>
 
-    <br>
-
-    <p><strong>Committee Details:</strong> Will be updated soon.</p>
-
-    <ul style="margin-top:15px; padding-left:20px;">
-        <li>Chairman – To be updated</li>
-        <li>Secretary – To be updated</li>
-        <li>Treasurer – To be updated</li>
-        <li>Committee Members – To be updated</li>
-    </ul>
+    <div class="role-list">
+      <div class="role-item"><div class="role-avatar">👑</div><div><p>Chairman</p><span>To be updated</span></div></div>
+      <div class="role-item"><div class="role-avatar">📋</div><div><p>Secretary</p><span>To be updated</span></div></div>
+      <div class="role-item"><div class="role-avatar">💰</div><div><p>Treasurer</p><span>To be updated</span></div></div>
+      <div class="role-item"><div class="role-avatar">👤</div><div><p>Committee Member 1</p><span>To be updated</span></div></div>
+      <div class="role-item"><div class="role-avatar">👤</div><div><p>Committee Member 2</p><span>To be updated</span></div></div>
+      <div class="role-item"><div class="role-avatar">👤</div><div><p>Committee Member 3</p><span>To be updated</span></div></div>
+      <div class="role-item"><div class="role-avatar">👤</div><div><p>Committee Member 4</p><span>To be updated</span></div></div>
+    </div>
+  </div>
 </section>
 
-<section id="facilities" class="section">
+<!-- FACILITIES -->
+<section id="facilities">
+  <div class="container">
+    <p class="section-label">Amenities</p>
     <h2>Facilities</h2>
-
-    <p>
-        Information regarding Gym, Parking, Garden, Children's Play Area,
-        Clubhouse and other amenities is currently under development.
-    </p>
+    <div class="divider"></div>
+    <p class="section-desc">We are in the process of documenting and setting up all society facilities. Please check back soon.</p>
+    <div class="under-construction">
+      <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v6"/><path d="M5 12v5c3 3 11 3 14 0v-5"/></svg>
+      <p style="font-weight:600; color: var(--text-mid);">Under Construction</p>
+      <p style="font-size:0.85rem; margin-top:6px;">Gym · Parking · Garden · Children's Play Area · Clubhouse</p>
+      <p style="font-size:0.82rem; margin-top:8px;">Details coming soon</p>
+    </div>
+  </div>
 </section>
 
-<section id="events" class="section">
+<!-- EVENTS -->
+<section id="events">
+  <div class="container">
+    <p class="section-label">Community</p>
     <h2>Upcoming Events</h2>
+    <div class="divider"></div>
 
-    <div class="card">
+    <div class="event-card">
+      <div class="event-date-box">
+        <strong>🪔</strong>
+        <span>Coming<br>Soon</span>
+      </div>
+      <div class="event-body">
+        <span class="event-tag">Community Event</span>
         <h3>Society Satya Narayana Pooja</h3>
-        <p>
-            We are pleased to announce the upcoming Society Satya Narayana Pooja.
-            Event details and timings will be shared soon.
-        </p>
+        <p>We warmly invite all residents to the upcoming Society Satya Narayana Pooja. This auspicious event will bring our community together for prayers and celebration. Date, timing, and venue details will be shared shortly.</p>
+      </div>
     </div>
+  </div>
 </section>
 
-<section id="gallery" class="section">
-    <h2>Gallery</h2>
-
-    <div class="gallery-placeholder">
-        <div class="placeholder">Image Placeholder</div>
-        <div class="placeholder">Image Placeholder</div>
-        <div class="placeholder">Image Placeholder</div>
-        <div class="placeholder">Image Placeholder</div>
+<!-- GALLERY -->
+<section id="gallery">
+  <div class="container">
+    <p class="section-label">Photos</p>
+    <h2>Society Gallery</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Photos of our community, events, and facilities will appear here soon.</p>
+    <div class="gallery-grid">
+      <div class="gallery-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Photo coming soon</span>
+      </div>
+      <div class="gallery-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Photo coming soon</span>
+      </div>
+      <div class="gallery-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Photo coming soon</span>
+      </div>
+      <div class="gallery-ph">
+        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+        <span>Photo coming soon</span>
+      </div>
     </div>
+  </div>
 </section>
 
-<section class="section">
-    <h2>Maintenance & Payment Information</h2>
-
-    <p>
-        Maintenance payment details, bank information, and QR codes
-        will be published soon.
-    </p>
+<!-- MAINTENANCE -->
+<section>
+  <div class="container">
+    <p class="section-label">Payments</p>
+    <h2>Maintenance &amp; Payment</h2>
+    <div class="divider"></div>
+    <div class="under-construction">
+      <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
+      <p style="font-weight:600; color: var(--text-mid);">Under Development</p>
+      <p style="font-size:0.85rem; margin-top:6px;">Bank details, UPI QR codes, and payment history will be available here.</p>
+    </div>
+  </div>
 </section>
 
-<section id="contact" class="section">
-    <h2>Emergency Contact</h2>
-
-    <div class="contact-box">
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get in Touch</p>
+    <h2>Contact &amp; Emergency</h2>
+    <div class="divider"></div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <span class="emergency-badge">🚨 Emergency</span>
         <h3>Chandan</h3>
-        <p>Phone: 9898989898</p>
-    </div>
+        <p style="color: var(--text-muted); font-size:0.88rem;">Society emergency contact</p>
+        <a href="tel:9898989898" class="contact-chip">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013 4.18 2 2 0 015 2h3a2 2 0 012 1.72 12 12 0 00.57 2.57 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12 12 0 002.57.57A2 2 0 0122 16.92z"/></svg>
+          9898989898
+        </a>
+      </div>
 
-    <br>
+      <div class="contact-card">
+        <h3>Committee Email</h3>
+        <p style="color: var(--text-muted); font-size:0.88rem;">For society queries, requests, and official communication</p>
+        <a href="mailto:orchidjwing@gmail.com" class="contact-chip">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 4l8 9 8-9"/></svg>
+          orchidjwing@gmail.com
+        </a>
+      </div>
 
-    <div class="contact-box">
-        <h3>Contact Us</h3>
-        <p>Email: orchidjwing@gmail.com</p>
+      <div class="contact-card">
+        <h3>Address</h3>
+        <p style="color: var(--text-muted); font-size:0.88rem;">Orchid J Wing, Mahavir Kalpavruksha, Near Kasarvadavali Police Station &amp; HyperCity Mall, Ghodbunder Road, Thane West – 400615</p>
+      </div>
     </div>
+  </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-    <p>© 2026 Orchid Co-operative Housing Society Limited</p>
-    <p>Kasarvadawali, Thane</p>
+  <h3>Orchid Co-operative Housing Society Limited</h3>
+  <p style="font-size:0.85rem; margin-top:4px;">Kasarvadawali, Thane West – 400615, Maharashtra</p>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#notices">Notices</a>
+    <a href="#committee">Committee</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p style="font-size:0.82rem; opacity:0.6;">📧 orchidjwing@gmail.com</p>
+  <hr>
+  <small>© 2026 Orchid Co-operative Housing Society Limited. All rights reserved.</small>
 </footer>
 
 </body>
 </html>
-```
