@@ -1042,3 +1042,181 @@ footer small { font-size: 0.78rem; opacity: 0.5; }
   box-shadow: 0 4px 12px rgba(0,0,0,.3);
   z-index: 1000;
 }
+
+/* ── MOBILE NAV (hamburger, CSS-only) ── */
+.nav-toggle { position: absolute; left: -9999px; }
+.nav-top { display: none; }
+
+@media (max-width: 720px) {
+  nav { padding: 0; }
+
+  .nav-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  .nav-brand {
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-burger {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.06);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-burger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .nav-toggle:checked ~ .nav-top .nav-burger span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle:checked ~ .nav-top .nav-burger span:nth-child(2) { opacity: 0; }
+  .nav-toggle:checked ~ .nav-top .nav-burger span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-inner {
+    display: none;
+    flex-direction: column;
+    padding: 6px 0 14px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  .nav-toggle:checked ~ .nav-inner { display: flex; }
+
+  .nav-inner a {
+    padding: 14px 20px;
+    text-align: left;
+    width: 100%;
+    border-bottom: 0;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-inner a:hover,
+  .nav-inner a.active {
+    background: rgba(255,255,255,0.08);
+    border-bottom: 0;
+    color: var(--green-light);
+  }
+
+  /* Tighter sections + headings */
+  section { padding: 44px 0; }
+  .container { padding: 0 16px; }
+  h2 { font-size: 1.4rem; }
+  .section-desc { font-size: 0.92rem; margin-bottom: 26px; }
+
+  /* Slim alert banner */
+  .alert-banner {
+    font-size: 0.78rem;
+    padding: 10px 14px;
+    line-height: 1.4;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  /* Compact inner-page header */
+  .page-header { padding: 32px 16px 26px; }
+  .page-header h1 { font-size: 1.5rem; }
+  .page-header p { font-size: 0.85rem; }
+
+  /* Home slider — shorter on phones */
+  .hero-images-only { height: 40vh; min-height: 240px; max-height: 360px; }
+  .hero-dots { bottom: 12px; }
+  .hero-dots button { width: 7px; height: 7px; }
+  .hero-dots button.active { width: 22px; }
+
+  /* Welcome card stats: 2×2 grid */
+  .welcome-card .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 20px;
+  }
+  .welcome-card .stats strong { font-size: 1.2rem; }
+
+  /* Tiles tighter */
+  .tile { padding: 20px 18px 18px; }
+  .tile-icon { width: 40px; height: 40px; font-size: 1.15rem; margin-bottom: 12px; }
+
+  /* Feature strip */
+  .feature-strip h3 { font-size: 1.15rem; }
+  .feature-strip p { font-size: 0.88rem; }
+  .feature-strip .feature-side strong { font-size: 1.8rem; }
+
+  /* Committee */
+  .committee-banner { padding: 24px 22px; }
+  .committee-banner h3 { font-size: 1.1rem; }
+  .member-count { font-size: 2.4rem; }
+  .role-photo { width: 50px; height: 50px; border-width: 2px; }
+  .role-item { padding: 14px 16px; }
+
+  /* Representatives */
+  .rep-card { padding: 14px 16px; gap: 12px; }
+  .rep-photo, .rep-photo-placeholder {
+    width: 48px; height: 48px; border-width: 2px;
+  }
+  .rep-photo-placeholder { font-size: 0.85rem; }
+
+  /* Events */
+  .event-card { flex-direction: column; gap: 16px; padding: 22px; }
+  .event-date-box { align-self: flex-start; }
+
+  /* Gallery */
+  .gallery-card img,
+  .gallery-card video { height: 220px; }
+
+  /* Contact */
+  .contact-card { padding: 22px; }
+  .contact-chip { padding: 12px 16px; }
+
+  /* Notice cards */
+  .card { padding: 22px 20px; }
+  .cards-grid { gap: 16px; }
+  .urgent-notice { padding: 18px 20px; gap: 12px; }
+  .urgent-notice h4 { font-size: 0.9rem; }
+  .urgent-notice p { font-size: 0.84rem; }
+  .urgent-icon { width: 34px; height: 34px; font-size: 1rem; }
+
+  /* Buttons — bigger tap targets */
+  .btn { padding: 12px 22px; font-size: 0.85rem; }
+
+  /* WhatsApp float */
+  .wa-float {
+    width: 54px; height: 54px;
+    font-size: 24px;
+    bottom: 16px; right: 16px;
+  }
+
+  /* Footer */
+  footer { padding: 36px 18px 24px; }
+  footer h3 { font-size: 1.15rem; }
+  .footer-links { gap: 14px; }
+
+  /* About highlights */
+  .about-highlights { gap: 12px; }
+  .highlight-pill { padding: 14px; }
+
+  /* Hero (legacy) — never used now on home but keep safe */
+  .hero { padding: 26px 16px; }
+  .hero-strip { gap: 24px; margin-top: 18px; padding-top: 16px; }
+}
