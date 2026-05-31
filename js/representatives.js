@@ -14,13 +14,14 @@ window.REPRESENTATIVES = [
   {
     name: 'Aditya Samudra',
     dept: 'Housekeeping',
-    flat: 'TBD',
+    flat: '2309',
     photo: 'aditya.jpg'
   },
   {
     name: 'Avinash Mane & Pankaj Rane',
     dept: 'Water Management',
-    flat: '303 · 1809'
+    flat: '303 · 1809',
+    photo: 'avinash.jpg'
   },
   {
     name: 'Jitendra Naik & Sourabh Ghosh',
@@ -31,16 +32,16 @@ window.REPRESENTATIVES = [
   {
     name: 'Kalpesh Mavlankar',
     dept: 'Security & PNG Gas Pipeline',
-    flat: '3302',
+    flat: '3303',
     photo: 'kalpesh.jpg'
   },
   {
     name: 'Rakesh Patil',
     dept: 'Water Pipeline',
-    flat: '2209'
+    flat: '2208'
   },
   {
-    name: 'Sumit Mishra',
+    name: 'Sumit Tewari',
     dept: 'CCTV',
     flat: '3308'
   },
