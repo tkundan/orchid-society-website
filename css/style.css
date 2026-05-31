@@ -971,6 +971,125 @@ h2 {
   letter-spacing: 0.06em;
 }
 
+/* ── DOCUMENTS ── */
+.doc-category {
+  margin-bottom: 44px;
+}
+
+.doc-category-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  color: var(--green-dark);
+  margin-bottom: 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--green-pale);
+}
+
+.doc-list {
+  display: grid;
+  gap: 14px;
+}
+
+.doc-card {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 22px;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.doc-card:hover {
+  border-color: var(--green-light);
+  box-shadow: 0 6px 22px rgba(27,67,50,0.08);
+  transform: translateY(-1px);
+}
+
+.doc-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--green-pale);
+  color: var(--green-mid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.doc-body { min-width: 0; }
+
+.doc-body h3 {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.doc-meta {
+  font-size: 0.78rem;
+  color: var(--green-soft);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  margin-bottom: 4px;
+}
+
+.doc-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.doc-action { flex-shrink: 0; }
+
+.doc-missing {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.doc-empty {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding: 12px 0;
+}
+
+.doc-loading {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 30px 0;
+}
+
+.doc-error {
+  background: #fff0f0;
+  border: 1px solid #ffcccc;
+  color: #c0392b;
+  border-radius: 12px;
+  padding: 18px 22px;
+  font-size: 0.88rem;
+}
+.doc-error p { margin-bottom: 4px; }
+.doc-error p:last-child { margin-bottom: 0; }
+
+@media (max-width: 720px) {
+  .doc-card {
+    grid-template-columns: 40px 1fr;
+    gap: 14px;
+    padding: 16px 18px;
+  }
+  .doc-action {
+    grid-column: 1 / -1;
+    margin-top: 4px;
+  }
+  .doc-icon { width: 40px; height: 40px; }
+}
+
 /* ── HOME QUICK LINKS ── */
 .quick-links {
   display: grid;
