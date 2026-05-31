@@ -171,8 +171,12 @@
       });
   }
 
-  document.addEventListener('DOMContentLoaded', function () {
+  function tryInit() {
     var target = document.getElementById('documentList');
     if (target) init(target);
-  });
+  }
+
+  document.addEventListener('DOMContentLoaded', tryInit);
+  // Fired by js/gate.js after the user unlocks
+  document.addEventListener('orchid:unlocked', tryInit);
 })();

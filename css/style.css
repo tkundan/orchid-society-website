@@ -1077,6 +1077,119 @@ h2 {
 .doc-error p { margin-bottom: 4px; }
 .doc-error p:last-child { margin-bottom: 0; }
 
+/* ── PASSWORD GATE ── */
+.gate {
+  max-width: 440px;
+  margin: 30px auto 60px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px 32px;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(27,67,50,0.06);
+}
+
+.gate-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--green-pale);
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 18px;
+  font-size: 1.4rem;
+}
+
+.gate h2 {
+  font-size: 1.25rem;
+  margin-bottom: 6px;
+}
+
+.gate p.gate-hint {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gate-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  text-align: center;
+  letter-spacing: 0.18em;
+  background: var(--off-white);
+  transition: border-color 0.2s;
+}
+
+.gate-input:focus {
+  outline: none;
+  border-color: var(--green-soft);
+  background: var(--white);
+}
+
+.gate-button {
+  background: var(--green-dark);
+  color: var(--white);
+  border: 0;
+  padding: 12px 20px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.gate-button:hover { background: var(--green-soft); }
+
+.gate-error {
+  font-size: 0.85rem;
+  color: #c0392b;
+  margin-top: 4px;
+  min-height: 1.2em;
+}
+
+.gate-footer {
+  margin-top: 18px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.gate-footer a {
+  color: var(--green-soft);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.gate-logout {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  border: 1px solid var(--border);
+  padding: 6px 12px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+  cursor: pointer;
+  background: transparent;
+  font-family: inherit;
+}
+
+.gate-logout:hover { color: var(--green-dark); border-color: var(--green-light); }
+
 @media (max-width: 720px) {
   .doc-card {
     grid-template-columns: 40px 1fr;
