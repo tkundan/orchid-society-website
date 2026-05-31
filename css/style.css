@@ -818,6 +818,20 @@ h2 {
   flex-shrink: 0;
 }
 
+.rep-photo-pair {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.rep-photo-pair .rep-photo {
+  margin-right: -14px;
+  border-width: 2px;
+}
+
+.rep-photo-pair .rep-photo:last-child {
+  margin-right: 0;
+}
+
 .rep-body { min-width: 0; }
 .rep-body .rep-name { font-size: 0.92rem; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
 .rep-body .rep-dept { font-size: 0.78rem; color: var(--green-mid); font-weight: 500; }
