@@ -85,6 +85,299 @@ body {
   z-index: 3;
 }
 
+/* Image-only hero (no text overlay) */
+.hero-images-only {
+  padding: 0;
+  height: 60vh;
+  min-height: 380px;
+  max-height: 620px;
+  display: block;
+  width: 70%;
+  margin: 0 auto;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(27,67,50,0.18);
+}
+
+@media (max-width: 720px) {
+  .hero-images-only { width: 92%; border-radius: 12px; }
+}
+
+/* Slim site-name top bar (replaces gold alert) */
+.site-name-bar {
+  background: var(--green-dark);
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border-bottom: 2px solid var(--gold);
+}
+.site-name-bar .alert-icon { display: none; }
+.hero-images-only::before { display: none; }
+.hero-images-only .hero-slides::after {
+  background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(27,67,50,0.35) 100%);
+}
+.hero-images-only .hero-slide { transform: scale(1.02); transition: opacity 1.6s ease-in-out, transform 9s ease-out; }
+.hero-images-only .hero-slide.active { transform: scale(1); }
+
+/* Slide indicator dots */
+.hero-dots {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  z-index: 5;
+}
+.hero-dots button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 0;
+  background: rgba(255,255,255,0.45);
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.3s, background 0.3s;
+}
+.hero-dots button.active {
+  width: 28px;
+  border-radius: 4px;
+  background: var(--white);
+}
+
+/* Floating welcome card that overlaps the slider */
+.welcome-card {
+  position: relative;
+  z-index: 10;
+  margin: -60px auto 40px;
+  max-width: 940px;
+  background: var(--white);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(27,67,50,0.18);
+  padding: 36px 40px;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .welcome-card { margin: -40px 16px 24px; padding: 26px 22px; }
+}
+
+.welcome-card .eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--green-soft);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.welcome-card h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 3.2vw, 2.2rem);
+  color: var(--green-dark);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.welcome-card .lede {
+  color: var(--text-mid);
+  font-size: 0.98rem;
+  max-width: 620px;
+  margin: 0 auto 18px;
+}
+
+.welcome-card .stats {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.welcome-card .stats > div { text-align: center; }
+.welcome-card .stats strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--green-dark);
+  line-height: 1;
+}
+.welcome-card .stats span {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: inline-block;
+}
+
+/* Modern quick-links grid (icon tiles) */
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.tile {
+  position: relative;
+  display: block;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 26px 24px 22px;
+  text-decoration: none;
+  color: var(--text-dark);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.tile::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--green-pale) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s;
+  pointer-events: none;
+}
+
+.tile:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 40px rgba(27,67,50,0.12);
+  border-color: var(--green-light);
+}
+
+.tile:hover::before { opacity: 1; }
+
+.tile-icon {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--green-pale);
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+}
+
+.tile h3 {
+  position: relative;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--green-dark);
+  margin-bottom: 4px;
+}
+
+.tile p {
+  position: relative;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  line-height: 1.55;
+}
+
+.tile-arrow {
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--green-soft);
+  letter-spacing: 0.04em;
+}
+
+/* Featured / urgent strip on home */
+.feature-strip {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 24px;
+  background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+  border-radius: 18px;
+  padding: 32px 36px;
+  color: var(--white);
+  align-items: center;
+}
+
+@media (max-width: 720px) {
+  .feature-strip { grid-template-columns: 1fr; padding: 26px 22px; }
+}
+
+.feature-strip h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: var(--white);
+}
+
+.feature-strip p {
+  opacity: 0.85;
+  font-size: 0.94rem;
+  margin-bottom: 14px;
+}
+
+.feature-strip .deadline-pill {
+  display: inline-block;
+  background: var(--gold);
+  color: #3B2800;
+  border-radius: 50px;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 0.04em;
+}
+
+.feature-strip .feature-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  color: var(--green-dark);
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.86rem;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.feature-strip .feature-cta:hover {
+  background: var(--green-light);
+  transform: translateX(2px);
+}
+
+.feature-strip .feature-side {
+  text-align: center;
+  border-left: 1px solid rgba(255,255,255,0.18);
+  padding-left: 24px;
+}
+
+@media (max-width: 720px) {
+  .feature-strip .feature-side { border-left: 0; border-top: 1px solid rgba(255,255,255,0.18); padding: 16px 0 0; }
+}
+
+.feature-strip .feature-side strong {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  display: block;
+  line-height: 1;
+  color: var(--green-light);
+}
+.feature-strip .feature-side span {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
+  display: block;
+  margin-top: 6px;
+}
+
 .hero-badge {
   display: inline-block;
   background: rgba(255,255,255,0.15);
