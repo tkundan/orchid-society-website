@@ -8,28 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<!-- NAV -->
-<nav>
-  <input type="checkbox" id="navToggle" class="nav-toggle">
-  <div class="nav-top">
-    <a href="index.html" class="nav-brand">Orchid Society</a>
-    <label for="navToggle" class="nav-burger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </label>
-  </div>
-  <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="notices.html">Notices</a>
-    <a href="committee.html">Committee</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="events.html" class="active">Events</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-
+<body data-page="events">
+<div data-include="partials/nav.html"></div>
 <!-- PAGE HEADER -->
 <header class="page-header">
   <h1>Upcoming Events</h1>
@@ -57,22 +37,7 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <h3>Orchid Co-operative Housing Society Limited</h3>
-  <p style="font-size:0.85rem; margin-top:4px;">Kasarvadawali, Thane West – 400615, Maharashtra</p>
-  <div class="footer-links">
-    <a href="about.html">About</a>
-    <a href="notices.html">Notices</a>
-    <a href="committee.html">Committee</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <p style="font-size:0.82rem; opacity:0.6;">📧 orchidjwing@gmail.com</p>
-  <hr>
-  <small>© 2026 Orchid Co-operative Housing Society Limited. All rights reserved.</small>
-</footer>
-
-<a href="https://wa.me/8355867975" target="_blank" class="wa-float">💬</a>
+<div data-include="partials/footer.html"></div>
+<script src="js/include.js"></script>
 </body>
 </html>

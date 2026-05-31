@@ -8,28 +8,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-<!-- NAV -->
-<nav>
-  <input type="checkbox" id="navToggle" class="nav-toggle">
-  <div class="nav-top">
-    <a href="index.html" class="nav-brand">Orchid Society</a>
-    <label for="navToggle" class="nav-burger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </label>
-  </div>
-  <div class="nav-inner">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="notices.html">Notices</a>
-    <a href="committee.html" class="active">Committee</a>
-    <a href="facilities.html">Facilities</a>
-    <a href="events.html">Events</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
-
+<body data-page="committee">
+<div data-include="partials/nav.html"></div>
 <!-- PAGE HEADER -->
 <header class="page-header">
   <h1>Managing Committee</h1>
@@ -76,93 +56,13 @@
       <div class="divider"></div>
       <p class="section-desc">Our society is managed by a dedicated 35 Representatives. Departments are divided among them.</p>
 
-      <div class="rep-list">
-        <div class="rep-card">
-          <img class="rep-photo" src="assets/representatives/aditya.jpg" alt="Aditya Samudra">
-          <div class="rep-body">
-            <p class="rep-name">Aditya Samudra</p>
-            <p class="rep-dept">Housekeeping</p>
-            <p class="rep-flat">Flat TBD</p>
-          </div>
-        </div>
-
-        <div class="rep-card">
-          <div class="rep-photo-placeholder" aria-hidden="true">AP</div>
-          <div class="rep-body">
-            <p class="rep-name">Avinash Mane &amp; Pankaj Rane</p>
-            <p class="rep-dept">Water Management</p>
-            <p class="rep-flat">Flat 303 · Flat 1809</p>
-          </div>
-        </div>
-
-        <div class="rep-card">
-          <div class="rep-photo-pair">
-            <img class="rep-photo" src="assets/representatives/jitendra.jpeg" alt="Jitendra Naik">
-            <img class="rep-photo" src="assets/representatives/sourabh.jpg" alt="Sourabh Ghosh">
-          </div>
-          <div class="rep-body">
-            <p class="rep-name">Jitendra Naik &amp; Sourabh Ghosh</p>
-            <p class="rep-dept">Lift</p>
-            <p class="rep-flat">Flat 2802 · Flat TBD</p>
-          </div>
-        </div>
-
-        <div class="rep-card">
-          <img class="rep-photo" src="assets/representatives/kalpesh.jpg" alt="Kalpesh Mavlankar">
-          <div class="rep-body">
-            <p class="rep-name">Kalpesh Mavlankar</p>
-            <p class="rep-dept">Security &amp; PNG Gas Pipeline</p>
-            <p class="rep-flat">Flat 3304</p>
-          </div>
-        </div>
-
-        <div class="rep-card">
-          <div class="rep-photo-placeholder" aria-hidden="true">RP</div>
-          <div class="rep-body">
-            <p class="rep-name">Rakesh Patil</p>
-            <p class="rep-dept">Water Pipeline</p>
-            <p class="rep-flat">Flat 2209</p>
-          </div>
-        </div>
-
-        <div class="rep-card">
-          <div class="rep-photo-placeholder" aria-hidden="true">SM</div>
-          <div class="rep-body">
-            <p class="rep-name">Sumit Mishra</p>
-            <p class="rep-dept">CCTV</p>
-            <p class="rep-flat">Flat 3308</p>
-          </div>
-        </div>
-
-        <div class="rep-card">
-          <div class="rep-photo-placeholder" aria-hidden="true">T</div>
-          <div class="rep-body">
-            <p class="rep-name">Tushar</p>
-            <p class="rep-dept">Fire Department</p>
-            <p class="rep-flat">Flat 710</p>
-          </div>
-        </div>
-      </div>
+      <div class="rep-list" id="repList"></div>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <h3>Orchid Co-operative Housing Society Limited</h3>
-  <p style="font-size:0.85rem; margin-top:4px;">Kasarvadawali, Thane West – 400615, Maharashtra</p>
-  <div class="footer-links">
-    <a href="about.html">About</a>
-    <a href="notices.html">Notices</a>
-    <a href="committee.html">Committee</a>
-    <a href="events.html">Events</a>
-    <a href="contact.html">Contact</a>
-  </div>
-  <p style="font-size:0.82rem; opacity:0.6;">📧 orchidjwing@gmail.com</p>
-  <hr>
-  <small>© 2026 Orchid Co-operative Housing Society Limited. All rights reserved.</small>
-</footer>
-
-<a href="https://wa.me/8355867975" target="_blank" class="wa-float">💬</a>
+<div data-include="partials/footer.html"></div>
+<script src="js/representatives.js"></script>
+<script src="js/include.js"></script>
 </body>
 </html>
