@@ -6,612 +6,7 @@
 <title>Orchid Co-operative Housing Society Limited</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-  :root {
-    --green-dark:  #1B4332;
-    --green-mid:   #2D6A4F;
-    --green-soft:  #40916C;
-    --green-light: #B7E4C7;
-    --green-pale:  #D8F3DC;
-    --gold:        #C9A227;
-    --gold-light:  #FFF3CD;
-    --text-dark:   #1a1a2e;
-    --text-mid:    #3d3d5c;
-    --text-muted:  #6c757d;
-    --white:       #ffffff;
-    --off-white:   #f8faf9;
-    --border:      #e0ebe5;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--off-white);
-    color: var(--text-dark);
-    line-height: 1.7;
-  }
-
-  /* ── HERO ── */
-  .hero {
-    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-soft) 100%);
-    color: var(--white);
-    text-align: center;
-    padding: 90px 20px 70px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    pointer-events: none;
-  }
-
-  .hero-badge {
-    display: inline-block;
-    background: rgba(255,255,255,0.15);
-    border: 1px solid rgba(255,255,255,0.3);
-    color: var(--green-light);
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    padding: 6px 16px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-  }
-
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3.4rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 14px;
-    text-shadow: 0 2px 20px rgba(0,0,0,0.2);
-  }
-
-  .hero-tagline {
-    font-size: 1.05rem;
-    font-weight: 300;
-    opacity: 0.88;
-    margin-bottom: 6px;
-    letter-spacing: 0.02em;
-  }
-
-  .hero-loc {
-    font-size: 0.88rem;
-    opacity: 0.65;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    margin-top: 6px;
-  }
-
-  .hero-loc svg { width: 14px; height: 14px; fill: currentColor; }
-
-  .hero-strip {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    margin-top: 44px;
-    padding-top: 36px;
-    border-top: 1px solid rgba(255,255,255,0.18);
-  }
-
-  .hero-stat { text-align: center; }
-  .hero-stat strong { display: block; font-size: 1.7rem; font-weight: 700; color: var(--white); }
-  .hero-stat span { font-size: 0.78rem; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.08em; }
-
-
-  /* ===== GALLERY ===== */
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:24px;
-    margin-top:30px;
-}
-
-.gallery-card{
-    background:#fff;
-    border-radius:16px;
-    overflow:hidden;
-    box-shadow:0 4px 15px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.gallery-card:hover{
-    transform:translateY(-6px);
-}
-
-.gallery-card img,
-.gallery-card video{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    display:block;
-}
-
-.gallery-card p{
-    margin:0;
-    padding:15px;
-    text-align:center;
-    font-weight:600;
-    color:#1B4332;
-}
-
-  /* ── NAV ── */
-  nav {
-    background: var(--green-dark);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 2px solid var(--gold);
-  }
-
-  .nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  nav a {
-    color: rgba(255,255,255,0.8);
-    text-decoration: none;
-    font-size: 0.82rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    padding: 16px 16px;
-    display: inline-block;
-    transition: color 0.2s;
-    border-bottom: 2px solid transparent;
-  }
-
-  nav a:hover {
-    color: var(--green-light);
-    border-bottom-color: var(--gold);
-  }
-
-  /* ── ALERT BANNER ── */
-  .alert-banner {
-    background: var(--gold);
-    color: #3B2800;
-    text-align: center;
-    padding: 12px 20px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .alert-banner .alert-icon {
-    width: 18px; height: 18px;
-    background: #3B2800;
-    border-radius: 50%;
-    color: var(--gold);
-    font-size: 11px;
-    font-weight: 700;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-  }
-
-  /* ── LAYOUT ── */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  section {
-    padding: 70px 0;
-  }
-
-  section:nth-child(even) { background: var(--white); }
-  section:nth-child(odd)  { background: var(--off-white); }
-
-  .section-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--green-soft);
-    margin-bottom: 10px;
-  }
-
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
-    font-weight: 700;
-    color: var(--green-dark);
-    margin-bottom: 14px;
-    line-height: 1.25;
-  }
-
-  .section-desc {
-    color: var(--text-muted);
-    max-width: 580px;
-    margin-bottom: 40px;
-    font-size: 0.97rem;
-  }
-
-  .divider {
-    width: 48px;
-    height: 3px;
-    background: var(--gold);
-    border-radius: 2px;
-    margin: 12px 0 28px;
-  }
-
-  /* ── CARDS ── */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 22px;
-  }
-
-  .card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 28px 26px;
-    transition: box-shadow 0.2s, transform 0.2s;
-  }
-
-  .card:hover {
-    box-shadow: 0 8px 30px rgba(27,67,50,0.1);
-    transform: translateY(-2px);
-  }
-
-  .card-icon {
-    width: 46px; height: 46px;
-    background: var(--green-pale);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 16px;
-  }
-
-  .card-icon svg { width: 22px; height: 22px; stroke: var(--green-mid); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-
-  .card h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--text-dark);
-    margin-bottom: 8px;
-  }
-
-  .card p {
-    font-size: 0.88rem;
-    color: var(--text-muted);
-    margin-bottom: 18px;
-    line-height: 1.6;
-  }
-
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    padding: 10px 20px;
-    background: var(--green-dark);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 8px;
-    font-size: 0.84rem;
-    font-weight: 500;
-    transition: background 0.2s;
-  }
-
-  .btn:hover { background: var(--green-soft); }
-
-  .btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-  .btn-outline {
-    background: transparent;
-    color: var(--green-dark);
-    border: 1.5px solid var(--green-dark);
-  }
-
-  .btn-outline:hover { background: var(--green-pale); color: var(--green-dark); }
-
-  /* ── ABOUT ── */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
-  }
-
-  @media(max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 30px; } }
-
-  .about-text p { color: var(--text-mid); margin-bottom: 16px; font-size: 0.97rem; }
-
-  .about-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
-
-  .highlight-pill {
-    background: var(--green-pale);
-    border-radius: 10px;
-    padding: 16px;
-    font-size: 0.84rem;
-  }
-
-  .highlight-pill strong {
-    display: block;
-    font-weight: 600;
-    color: var(--green-dark);
-    font-size: 1rem;
-    margin-bottom: 3px;
-  }
-
-  .highlight-pill span { color: var(--text-muted); }
-
-  .rera-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #eaf7ef;
-    border: 1px solid var(--green-light);
-    border-radius: 6px;
-    padding: 8px 14px;
-    font-size: 0.78rem;
-    color: var(--green-dark);
-    font-weight: 500;
-    margin-top: 18px;
-  }
-
-  .rera-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green-soft); flex-shrink: 0; }
-
-  /* ── NOTICE BOARD ── */
-  .urgent-notice {
-    background: var(--gold-light);
-    border: 1.5px solid var(--gold);
-    border-radius: 12px;
-    padding: 22px 26px;
-    margin-bottom: 36px;
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-
-  .urgent-icon {
-    width: 40px; height: 40px;
-    background: var(--gold);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    font-size: 1.1rem;
-  }
-
-  .urgent-notice h4 { font-weight: 600; color: #7a5100; margin-bottom: 4px; font-size: 0.95rem; }
-  .urgent-notice p { color: #6b4400; font-size: 0.88rem; }
-
-  .deadline-badge {
-    display: inline-block;
-    background: #d4380d;
-    color: white;
-    border-radius: 5px;
-    padding: 2px 10px;
-    font-size: 0.78rem;
-    font-weight: 600;
-    margin-left: 6px;
-  }
-
-  /* ── COMMITTEE ── */
-  .committee-banner {
-    background: var(--green-dark);
-    color: var(--white);
-    border-radius: 14px;
-    padding: 34px 36px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .committee-banner h3 { font-family: 'Playfair Display', serif; font-size: 1.3rem; margin-bottom: 6px; }
-  .committee-banner p  { font-size: 0.88rem; opacity: 0.75; }
-
-  .member-count {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.2rem;
-    font-weight: 700;
-    color: var(--green-light);
-    line-height: 1;
-  }
-
-  .member-count small { font-family: 'DM Sans', sans-serif; font-size: 0.75rem; opacity: 0.7; display: block; text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
-
-  .role-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 14px;
-    margin-top: 28px;
-  }
-
-  .role-item {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 18px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-
-  .role-avatar {
-    width: 38px; height: 38px;
-    background: var(--green-pale);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-
-  .role-item p { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); }
-  .role-item span { font-size: 0.78rem; color: var(--text-muted); }
-
-  /* ── EVENTS ── */
-  .event-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-left: 5px solid var(--green-soft);
-    border-radius: 14px;
-    padding: 28px;
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    max-width: 680px;
-  }
-
-  .event-date-box {
-    background: var(--green-pale);
-    border-radius: 10px;
-    padding: 12px 18px;
-    text-align: center;
-    flex-shrink: 0;
-  }
-
-  .event-date-box strong { display: block; font-size: 1.6rem; font-weight: 700; color: var(--green-dark); line-height: 1; }
-  .event-date-box span { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--green-soft); font-weight: 600; }
-
-  .event-body h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
-  .event-body p { font-size: 0.88rem; color: var(--text-muted); }
-
-  .event-tag {
-    display: inline-block;
-    background: var(--green-pale);
-    color: var(--green-dark);
-    border-radius: 6px;
-    padding: 3px 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-  }
-
-  /* ── FACILITIES ── */
-  .under-construction {
-    background: var(--off-white);
-    border: 1.5px dashed var(--border);
-    border-radius: 14px;
-    padding: 50px;
-    text-align: center;
-    color: var(--text-muted);
-  }
-
-  .under-construction svg { width: 40px; height: 40px; stroke: var(--border); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; margin-bottom: 14px; }
-
-  /* ── GALLERY ── */
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 16px;
-  }
-
-  .gallery-ph {
-    height: 190px;
-    background: var(--green-pale);
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--green-mid);
-    gap: 8px;
-    font-size: 0.82rem;
-    font-weight: 500;
-    border: 1.5px dashed var(--green-light);
-  }
-
-  .gallery-ph svg { width: 26px; height: 26px; stroke: currentColor; fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
-
-  /* ── CONTACT ── */
-  .contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 22px;
-  }
-
-  .contact-card {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 28px;
-  }
-
-  .contact-card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; color: var(--text-dark); }
-
-  .contact-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--green-pale);
-    border-radius: 8px;
-    padding: 10px 16px;
-    margin-top: 14px;
-    font-size: 0.88rem;
-    font-weight: 500;
-    color: var(--green-dark);
-    text-decoration: none;
-  }
-
-  .contact-chip svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-
-  .emergency-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: #fff0f0;
-    color: #c0392b;
-    border: 1px solid #ffcccc;
-    border-radius: 6px;
-    padding: 4px 12px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background: var(--green-dark);
-    color: rgba(255,255,255,0.7);
-    padding: 50px 20px 30px;
-    text-align: center;
-  }
-
-  footer h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--white);
-    font-size: 1.4rem;
-    margin-bottom: 8px;
-  }
-
-  .footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin: 22px 0; }
-  .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.82rem; transition: color 0.2s; }
-  .footer-links a:hover { color: var(--green-light); }
-
-  footer hr { border: none; border-top: 1px solid rgba(255,255,255,0.12); margin: 22px auto; max-width: 600px; }
-  footer small { font-size: 0.78rem; opacity: 0.5; }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -623,6 +18,7 @@
 
 <!-- HERO -->
 <header class="hero">
+  <div class="hero-slides" id="heroSlides" aria-hidden="true"></div>
   <div class="hero-badge">🌿 Est. 2023 · Kasarvadawali, Thane</div>
   <h1>Orchid Co-operative<br>Housing Society Limited</h1>
   <p class="hero-tagline">A Vibrant Residential Community Since 2023</p>
@@ -640,274 +36,73 @@
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <a href="#about">About</a>
-    <a href="#notices">Notices</a>
-    <a href="#committee">Committee</a>
-    <a href="#facilities">Facilities</a>
-    <a href="#events">Events</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#contact">Contact</a>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="notices.html">Notices</a>
+    <a href="committee.html">Committee</a>
+    <a href="facilities.html">Facilities</a>
+    <a href="events.html">Events</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<!-- ABOUT -->
-<section id="about">
+<!-- WELCOME / QUICK LINKS -->
+<section>
   <div class="container">
-    <div class="about-grid">
-      <div class="about-text">
-        <p class="section-label">Who We Are</p>
-        <h2>About Orchid Society</h2>
-        <div class="divider"></div>
-        <p>Orchid Co-operative Housing Society Limited is a proud residential community nestled within the prestigious <strong>Mahavir Kalpavruksha</strong> township by DSS Group — located in the heart of Kasarvadawali, Ghodbunder Road, Thane West.</p>
-        <p>Established in 2023, we are home to a thriving community of families and professionals committed to safe, harmonious, and comfortable living. The Orchid tower is part of a large integrated township offering 1 BHK and 2 BHK apartments with modern design and top-quality specifications.</p>
-        <p>This portal is our residents' central hub — for notices, complaint registration, event updates, and connecting with the managing committee.</p>
-        <div class="rera-tag">
-          <span class="rera-dot"></span>
-          RERA Registered · J Wing: P51700013805 &amp; P51700019337
-        </div>
-      </div>
-      <div>
-        <div class="about-highlights">
-          <div class="highlight-pill">
-            <strong>1 &amp; 2 BHK</strong>
-            <span>Spacious apartments</span>
-          </div>
-          <div class="highlight-pill">
-            <strong>35 Floors Tower</strong>
-            <span>High-rise living</span>
-          </div>
-          <div class="highlight-pill">
-            <strong>2000+</strong>
-            <span>Flats in complex</span>
-          </div>
-          <div class="highlight-pill">
-            <strong>5 min</strong>
-            <span>From Ghodbunder Rd</span>
-          </div>
-          <div class="highlight-pill">
-            <strong>Clubhouse</strong>
-            <span>Lifestyle amenities</span>
-          </div>
-          <div class="highlight-pill">
-            <strong>24×7</strong>
-            <span>Power backup &amp; security</span>
-          </div>
-        </div>
-      </div>
+    <p class="section-label">Welcome</p>
+    <h2>Your Society Hub</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Notices, complaint registration, event updates, and direct lines to the managing committee — all in one place.</p>
+
+    <div class="quick-links">
+      <a href="about.html" class="quick-link">
+        <h3>About</h3>
+        <p>Who we are and what makes Orchid home.</p>
+        <span class="quick-link-arrow">Learn more →</span>
+      </a>
+      <a href="notices.html" class="quick-link">
+        <h3>Notices</h3>
+        <p>Announcements, deadlines, and complaint forms.</p>
+        <span class="quick-link-arrow">View notices →</span>
+      </a>
+      <a href="committee.html" class="quick-link">
+        <h3>Committee</h3>
+        <p>Meet the 7-member core committee.</p>
+        <span class="quick-link-arrow">Meet the team →</span>
+      </a>
+      <a href="facilities.html" class="quick-link">
+        <h3>Facilities</h3>
+        <p>Amenities and services available to residents.</p>
+        <span class="quick-link-arrow">Explore →</span>
+      </a>
+      <a href="events.html" class="quick-link">
+        <h3>Events</h3>
+        <p>Upcoming community celebrations and activities.</p>
+        <span class="quick-link-arrow">See events →</span>
+      </a>
+      <a href="gallery.html" class="quick-link">
+        <h3>Gallery</h3>
+        <p>Moments from the Orchid community.</p>
+        <span class="quick-link-arrow">Open gallery →</span>
+      </a>
+      <a href="contact.html" class="quick-link">
+        <h3>Contact</h3>
+        <p>Emergency numbers and committee email.</p>
+        <span class="quick-link-arrow">Get in touch →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- NOTICE BOARD -->
-<section id="notices">
+<!-- URGENT CALLOUT -->
+<section>
   <div class="container">
-    <p class="section-label">Important Updates</p>
-    <h2>Announcements &amp; Notice Board</h2>
-    <div class="divider"></div>
-
     <div class="urgent-notice">
       <div class="urgent-icon">⚠️</div>
       <div>
         <h4>Urgent: Face Scan Registration Deadline <span class="deadline-badge">31 May 2026</span></h4>
-        <p>All residents are requested to complete their biometric face scan entry registration before 31st May 2026. Please visit the Society office or use the registration link below.</p>
-      </div>
-    </div>
-
-    <div class="cards-grid">
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 12h6M9 16h6M17 3H7a2 2 0 00-2 2v16l3-2 2 2 2-2 2 2 2-2 3 2V5a2 2 0 00-2-2z"/></svg>
-        </div>
-        <h3>Register a Complaint</h3>
-        <p>Submit maintenance issues, society concerns, or any grievances directly to the manager</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdMNdAE-oISQy_exnzV8wM-1nME6tuuslcXuHegDLXkDJI_Lw/viewform" target="_blank" class="btn">Open Form</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-        </div>
-        <h3>Biometric Registration</h3>
-        <p>Register your face scan for secure building entry access. All residents must enrol before the deadline.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLScIUr8Vaw7O0UqhCoy6mGqCZACJuTkND_Lm62wpwTRF0OZ1uQ/viewform" target="_blank" class="btn">Register Now</a>
-      </div>
-
-      <div class="card">
-        <div class="card-icon">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z" rx="2"/><path d="M8 10l4 4 4-4"/></svg>
-        </div>
-        <h3>Important Email IDs</h3>
-        <p>Official contact for society correspondence, queries, and resident communication.</p>
-        <a href="mailto:orchidjwing@gmail.com" class="btn">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 4l8 9 8-9"/></svg>
-          orchidjwing@gmail.com
-        </a><br><br><a href="mailto:orchidmanger@gmail.com" class="btn">orchidmanger@gmail.com</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMMITTEE -->
-<section id="committee">
-  <div class="container">
-    <p class="section-label">Leadership</p>
-    <h2>Managing Committee</h2>
-    <div class="divider"></div>
-    <p class="section-desc">Our society is managed by a dedicated 7-member Core Committee elected to serve the residents.</p>
-
-    <div class="committee-banner">
-      <div>
-        <h3>Core Committee 2025–26</h3>
-        <p>Serving the residents of Orchid Co-op Housing Society</p>
-        <div style="margin-top:16px;">
-          <a href="mailto:orchidjwing@gmail.com" class="btn btn-outline" style="border-color: var(--green-light); color: var(--green-light);">
-            <svg viewBox="0 0 24 24" width="14" height="14" stroke="currentColor" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM4 4l8 9 8-9"/></svg>
-            orchidjwing@gmail.com
-          </a>
-        </div>
-      </div>
-      <div>
-        <div class="member-count">7<small>Core Members</small></div>
-      </div>
-    </div>
-
-    <div class="role-list">
-      <div class="role-item"><img src="assets/chairman.jpg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #B7E4C7;"><div><p>Sachin Gokul Patil</p><span>Core Team</span></div></div>
-      <div class="role-item"><img src="assets/kundan.jpg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #B7E4C7;"><div><p>Kundan Thakur</p><span>Core Team</span></div></div>
-      <div class="role-item"><img src="assets/vaibhav.jpg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #B7E4C7;"><div><p>Vaibhav Kulkarni</p><span>Core Team</span></div></div>
-      <div class="role-item"><img src="assets/vivek.jpeg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #B7E4C7;"><div><p>Vivek Chhabra</p><span>Core Team</span></div></div>
-      <div class="role-item"><img src="assets/hashmukh.jpg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #B7E4C7;"><div><p>Hasmukh Ramesh Chavda</p><span>Core Team</span></div></div>
-      <div class="role-item"><img src="assets/khushali.jpeg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #B7E4C7;"><div><p>Khushali Dhananjai Bayani</p><span>Core Team</span></div></div>
-      <div class="role-item"><img src="assets/mangesh.jpg" style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #B7E4C7;"><div><p>Mangesh Shirke</p><span>Core Team</span></div></div>
-    </div>
-  </div>
-
-
-  
-</section>
-
-<!-- FACILITIES -->
-<section id="facilities">
-  <div class="container">
-    <p class="section-label">Amenities</p>
-    <h2>Facilities</h2>
-    <div class="divider"></div>
-    <p class="section-desc">We are in the process of documenting and setting up all society facilities. Please check back soon.</p>
-    <div class="under-construction">
-      <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v6"/><path d="M5 12v5c3 3 11 3 14 0v-5"/></svg>
-      <p style="font-weight:600; color: var(--text-mid);">Under Construction</p>
-      <p style="font-size:0.85rem; margin-top:6px;">Gym · Parking · Garden · Children's Play Area · Clubhouse</p>
-      <p style="font-size:0.82rem; margin-top:8px;">Details coming soon</p>
-    </div>
-  </div>
-</section>
-
-<!-- EVENTS -->
-<section id="events">
-  <div class="container">
-    <p class="section-label">Community</p>
-    <h2>Upcoming Events</h2>
-    <div class="divider"></div>
-
-    <div class="event-card">
-      <div class="event-date-box">
-        <strong>🪔</strong>
-        <span>Coming<br>Soon</span>
-      </div>
-      <div class="event-body">
-        <span class="event-tag">Community Event</span>
-        <h3>Society Satya Narayana Pooja</h3>
-        <p>We warmly invite all residents to the upcoming Society Satya Narayana Pooja. This auspicious event will bring our community together for prayers and celebration. Date, timing, and venue details will be shared shortly.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="container">
-
-    <p class="section-label">Photos</p>
-    <h2>Society Gallery</h2>
-    <div class="divider"></div>
-
-    <p class="section-desc">
-      Community events, Orchid Tower, security team and society facilities.
-    </p>
-
-    <div class="gallery-grid">
-
-      <div class="gallery-card">
-        <img src="assets/gallery/orchid-tower.jpg" alt="Orchid Tower">
-        <p>Orchid Tower</p>
-      </div>
-
-      <div class="gallery-card">
-        <video controls>
-          <source src="assets/gallery/guddi-video.mp4" type="video/mp4">
-        </video>
-        <p>Guddi Padwa Celebration</p>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/gallery/kumkum.jpeg" alt="Haldi Kumkum">
-        <p>Haldi Kumkum Ceremony</p>
-      </div>
-
-      <div class="gallery-card">
-        <img src="assets/gallery/kids.jpeg" alt="Kids Event">
-        <p>Kids Activity</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- MAINTENANCE -->
-<section>
-  <div class="container">
-    <p class="section-label">Payments</p>
-    <h2>Maintenance &amp; Payment</h2>
-    <div class="divider"></div>
-    <div class="under-construction">
-      <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20"/></svg>
-      <p style="font-weight:600; color: var(--text-mid);">Under Development</p>
-      <p style="font-size:0.85rem; margin-top:6px;">Bank details, UPI QR codes, and payment history will be available here.</p>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact">
-  <div class="container">
-    <p class="section-label">Get in Touch</p>
-    <h2>Contact &amp; Emergency</h2>
-    <div class="divider"></div>
-    <div class="contact-grid">
-      <div class="contact-card">
-        <span class="emergency-badge">🚨 Emergency</span>
-        <h3>Chandan (Security Supervisor)</h3>
-        <p style="color: var(--text-muted); font-size:0.88rem;">Society emergency contact</p>
-        <a href="tel:8355867975" class="contact-chip">
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013 4.18 2 2 0 015 2h3a2 2 0 012 1.72 12 12 0 00.57 2.57 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12 12 0 002.57.57A2 2 0 0122 16.92z"/></svg>
-          8355867975
-        </a>
-      </div>
-
-      <div class="contact-card">
-        <h3>Committee Email</h3>
-        <p style="color: var(--text-muted); font-size:0.88rem;">For society queries, requests, and official communication</p>
-        <a href="mailto:orchidjwing@gmail.com" class="contact-chip">
-          <svg viewBox="0 0 24 24"><path d="M4 4h16v16H4zM4 4l8 9 8-9"/></svg>
-          orchidjwing@gmail.com
-        </a>
-      </div>
-
-      <div class="contact-card">
-        <h3>Address</h3>
-        <p style="color: var(--text-muted); font-size:0.88rem;">Orchid J Wing, Mahavir Kalpavruksha, Near Kasarvadavali Police Station &amp; HyperCity Mall, Ghodbunder Road, Thane West – 400615</p>
+        <p>All residents are requested to complete their biometric face scan entry registration before 31st May 2026. <a href="notices.html" style="color:#7a5100;font-weight:600;">View on the Notices page →</a></p>
       </div>
     </div>
   </div>
@@ -918,18 +113,56 @@
   <h3>Orchid Co-operative Housing Society Limited</h3>
   <p style="font-size:0.85rem; margin-top:4px;">Kasarvadawali, Thane West – 400615, Maharashtra</p>
   <div class="footer-links">
-    <a href="#about">About</a>
-    <a href="#notices">Notices</a>
-    <a href="#committee">Committee</a>
-    <a href="#events">Events</a>
-    <a href="#contact">Contact</a>
+    <a href="about.html">About</a>
+    <a href="notices.html">Notices</a>
+    <a href="committee.html">Committee</a>
+    <a href="events.html">Events</a>
+    <a href="contact.html">Contact</a>
   </div>
   <p style="font-size:0.82rem; opacity:0.6;">📧 orchidjwing@gmail.com</p>
   <hr>
   <small>© 2026 Orchid Co-operative Housing Society Limited. All rights reserved.</small>
 </footer>
 
+<a href="https://wa.me/8355867975" target="_blank" class="wa-float">💬</a>
 
-<a href="https://wa.me/8355867975" target="_blank" style="position:fixed;bottom:20px;right:20px;background:#25D366;color:white;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:28px;box-shadow:0 4px 12px rgba(0,0,0,.3);">💬</a>
+<script>
+  (function () {
+    var images = [
+      'assets/gallery/orchid-tower.jpg',
+      'assets/gallery/open-area.jpg',
+      'assets/gallery/agm-hall.jpg',
+      'assets/gallery/security-team.jpg',
+      'assets/gallery/kumkum.jpeg',
+      'assets/gallery/kids.jpeg'
+    ];
+
+    for (var i = images.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = images[i]; images[i] = images[j]; images[j] = tmp;
+    }
+
+    var container = document.getElementById('heroSlides');
+    if (!container) return;
+
+    var slides = images.map(function (src) {
+      var el = document.createElement('div');
+      el.className = 'hero-slide';
+      el.style.backgroundImage = 'url("' + src + '")';
+      container.appendChild(el);
+      return el;
+    });
+
+    if (!slides.length) return;
+    var current = 0;
+    slides[current].classList.add('active');
+
+    setInterval(function () {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }, 5000);
+  })();
+</script>
 </body>
 </html>
