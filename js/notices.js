@@ -149,13 +149,92 @@
     '</div>';
   }
 
-  function render(md, urgentTarget, listTarget) {
+  // Parse content/popup.md into a notice-shaped object so it can appear in the list.
+  function parsePopupAsNotice(md) {
+    if (!md) return null;
+    // Strip preamble + comments
+    var marker = md.indexOf('POPUP CONTENT START');
+    if (marker >= 0) {
+      var nl = md.indexOf('\n', marker);
+      if (nl >= 0) md = md.slice(nl + 1);
+    }
+    md = md.replace(/<!--[\s\S]*?-->/g, '');
+    if (md.trim().toLowerCase() === 'none' || md.trim() === '') return null;
+
+    var cleaned = md.split(/\r?\n/)
+      .filter(function (l) { return !/^\s*>/.test(l) && !/^\s*#/.test(l); })
+      .join('\n');
+
+    var meta = {};
+    var bodyLines = [];
+    var inMeta = true;
+    var sawAny = false;
+    cleaned.split(/\r?\n/).forEach(function (line) {
+      if (inMeta) {
+        if (line.trim() === '') {
+          if (sawAny) inMeta = false;
+          return;
+        }
+        var m = line.match(/^([a-zA-Z][\w-]*):\s*(.*)$/);
+        if (m) { meta[m[1].toLowerCase()] = m[2].trim(); sawAny = true; return; }
+        inMeta = false;
+      }
+      bodyLines.push(line);
+    });
+
+    if (!meta.title && !bodyLines.length) return null;
+
+    // Group into paragraphs
+    var paragraphs = [];
+    var buf = [];
+    bodyLines.forEach(function (l) {
+      if (l.trim() === '') {
+        if (buf.length) { paragraphs.push(buf.join(' ')); buf = []; }
+      } else {
+        buf.push(l.trim());
+      }
+    });
+    if (buf.length) paragraphs.push(buf.join(' '));
+
+    // Treat red/gold accents as urgent so they sit in the gold callout band
+    var urgentByAccent = ['red', 'gold'].indexOf((meta.accent || '').toLowerCase()) >= 0;
+
+    return {
+      title: meta.title || 'Latest Update',
+      meta: {
+        icon: meta.icon || '📢',
+        urgent: urgentByAccent ? 'true' : '',
+        deadline: meta.deadline || ''
+      },
+      paragraphs: paragraphs,
+      buttons: []
+    };
+  }
+
+  function render(md, popupMd, urgentTarget, listTarget) {
     var notices = splitNotices(md).map(parseNotice);
+    var popupNotice = parsePopupAsNotice(popupMd);
+
     var urgent = notices.filter(function (n) { return (n.meta.urgent || '').toLowerCase() === 'true'; });
     var rest   = notices.filter(function (n) { return (n.meta.urgent || '').toLowerCase() !== 'true'; });
 
+    // Slot the popup notice in front of its peer group so residents see it first.
+    if (popupNotice) {
+      if ((popupNotice.meta.urgent || '').toLowerCase() === 'true') {
+        urgent.unshift(popupNotice);
+      } else {
+        rest.unshift(popupNotice);
+      }
+    }
+
     if (urgentTarget) urgentTarget.innerHTML = urgent.map(renderNotice).join('');
     if (listTarget)   listTarget.innerHTML   = rest.map(renderNotice).join('');
+  }
+
+  function fetchText(path) {
+    return fetch(path, { cache: 'no-cache' })
+      .then(function (r) { return r.ok ? r.text() : ''; })
+      .catch(function () { return ''; });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
@@ -163,9 +242,11 @@
     var urgentTarget = document.getElementById('urgentNotices');
     if (!listTarget && !urgentTarget) return;
 
-    fetch('content/notices.md', { cache: 'no-cache' })
-      .then(function (r) { return r.ok ? r.text() : ''; })
-      .then(function (md) { render(md, urgentTarget, listTarget); })
-      .catch(function () { /* silent */ });
+    Promise.all([
+      fetchText('content/notices.md'),
+      fetchText('content/popup.md')
+    ]).then(function (results) {
+      render(results[0], results[1], urgentTarget, listTarget);
+    });
   });
 })();
