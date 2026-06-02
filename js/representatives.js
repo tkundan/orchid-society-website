@@ -49,7 +49,7 @@ window.REPRESENTATIVES = [
     name: 'Tushar Chandar',
     dept: 'Fire Department',
     flat: '710',
-    photo: 'tushar.jpg'
+    photo: 'tushar.jpeg'
   }
 ];
 
