@@ -45,7 +45,7 @@ window.REPRESENTATIVES = [
     name: 'Sumit Tewari',
     dept: 'CCTV',
     flat: '3308',
-    photo: 'sumit.jpg'
+    photo: 'sumit.jpeg'
   },
   {
     name: 'Tushar Chandar',
