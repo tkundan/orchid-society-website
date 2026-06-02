@@ -773,7 +773,8 @@ h2 {
 /* ── REPRESENTATIVES ── */
 .rep-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-auto-rows: 1fr;
   gap: 16px;
   margin-top: 28px;
 }
@@ -824,7 +825,9 @@ h2 {
 }
 
 .rep-photo-pair .rep-photo {
-  margin-right: -14px;
+  width: 40px;
+  height: 40px;
+  margin-right: -12px;
   border-width: 2px;
 }
 
