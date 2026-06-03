@@ -43,17 +43,18 @@
 
 <!-- ─── POPUP CONTENT START — edit below this line. Keep this marker as-is. ─── -->
 
-title: TMC Water Supply Update
-icon: 💧
+title: Water Supply Schedule
+icon: 🚰
 accent: blue
 
-TMC has confirmed that a major cleaning activity is scheduled for 3rd June. As a result, there will be no water supply on 4th and 5th June. Water supply is expected to resume on 6th June; however, since the pipelines will need to be refilled gradually, normal water pressure and availability may take some time to stabilize.
+Please note the water supply timings for today:
 
-Given the situation, there is a possibility of water shortages from 3rd June to 7th June.
+Morning: Water supply will be available until 9:30 AM
+Evening: Water supply will be available from 7:00 PM to 9:00 PM
 
-We may need to implement fixed water supply timings during this period. Ours is a large society, and if we do not receive any water from TMC, even after arranging the maximum available tanker supply (approximately 12 tankers per day), we may only be able to provide water for about 3 hours in the morning and 2 hours in the evening.
+We request all residents to use water judiciously and plan accordingly.
 
-Historically, water consumption increases significantly during supply disruptions, making it essential for all residents to use water responsibly and avoid unnecessary wastage.
+Thank you for your cooperation.
 <!--
 ─── EXAMPLES (these are commented out — uncomment to use) ───
 
