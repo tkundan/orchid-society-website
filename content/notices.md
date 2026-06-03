@@ -11,11 +11,10 @@
 
 <!-- ─── NOTICES START ─── -->
 
-## Face Scan Registration Deadline
-urgent: true
-deadline: 31 May 2026
+## Face Scan Registration
 
-All residents are requested to complete their biometric face scan entry registration before 31st May 2026. Please visit the Society office or use the registration link below.
+
+All residents are requested to complete their biometric face scan entry registration as soon as possible. Kindly complete your registration using the link below and then visit the Society Office to complete the access process.
 
 > [Register Now](https://docs.google.com/forms/d/e/1FAIpQLScIUr8Vaw7O0UqhCoy6mGqCZACJuTkND_Lm62wpwTRF0OZ1uQ/viewform)
 
