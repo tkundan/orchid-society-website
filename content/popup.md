@@ -43,18 +43,16 @@
 
 <!-- ─── POPUP CONTENT START — edit below this line. Keep this marker as-is. ─── -->
 
-title: Water Supply Schedule
+title: Water Supply Schedule – 04 June 2026
 icon: 🚰
 accent: blue
 
-Please note the water supply timings for today:
+Please note the water supply timings for tomorrow:
 
-Morning: Water supply will be available until 9:30 AM
-Evening: Water supply will be available from 7:00 PM to 9:00 PM
+Morning: 5:00 AM to 9:30 AM
+Evening: 7:00 PM to 9:00 PM
 
-We request all residents to use water judiciously and plan accordingly.
-
-Thank you for your cooperation.
+Residents are requested to plan accordingly and use water judiciously.
 <!--
 ─── EXAMPLES (these are commented out — uncomment to use) ───
 
