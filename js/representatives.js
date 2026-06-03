@@ -20,7 +20,7 @@ window.REPRESENTATIVES = [
   {
     name: 'Avinash Mane, Tejas Dalvee & Pankaj Rane',
     dept: 'Water Management',
-    flat: '303 · 2707 · 1809',
+    flat: '303 · 2807 · 1809',
     photos: ['avinash.jpg', 'tejas.jpg', 'pankaj.jpeg']
   },
   {
