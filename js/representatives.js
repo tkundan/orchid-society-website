@@ -55,6 +55,51 @@ window.REPRESENTATIVES = [
   }
 ];
 
+/* Floor Representatives — one (or more) resident per floor, no department.
+   Fields:
+     name   (required) — full display name
+     floor  (required) — integer floor number (e.g. 21 for "21st floor")
+     flat   (optional) — flat number, e.g. "2103"
+     photo  (optional) — filename in assets/representatives/
+                          If absent, an initials placeholder is shown.
+
+   Sample data below — replace with real names when you have them. */
+window.FLOOR_REPRESENTATIVES = [
+  { name: 'Vivek Chhabra',            floor: 1,  flat: '102' },
+  { name: 'Avinashi Mane',            floor: 3,  flat: '303' },
+  { name: 'Sachin Patil',             floor: 6,  flat: '603' },
+  { name: 'Abhishek Mane',            floor: 7,  flat: '704' },
+  { name: 'Tushar',                   floor: 7,  flat: '710' },
+  { name: 'Santosh Pendurkar',        floor: 8,  flat: '804' },
+  { name: 'Deepak Phalke',            floor: 9,  flat: '911' },
+  { name: 'Kundan Thakur',            floor: 11, flat: '1108' },
+  { name: 'Kartik Negandhi',          floor: 13, flat: '' },
+  { name: 'Swapnil Mokal',            floor: 13, flat: '1303' },
+  { name: 'Gautam',                   floor: 17, flat: '' },
+  { name: 'Piya',                     floor: 17, flat: '1702-03' },
+  { name: 'Mukund Raut',              floor: 18, flat: '1810' },
+  { name: 'Vinod Patil',              floor: 18, flat: '' },
+  { name: 'Onkar Suryavanshi',        floor: 19, flat: '1904' },
+  { name: 'Vishal Sonavane',          floor: 20, flat: '' },
+  { name: 'Nilesh Hadkar',            floor: 20, flat: '' },
+  { name: 'Mangesh Shirke',           floor: 21, flat: '2109' },
+  { name: 'Saikat Maity',             floor: 21, flat: '' },
+  { name: 'Rakesh Patil',             floor: 22, flat: '2208' },
+  { name: 'Aditya Samudra',           floor: 23, flat: '2309' },
+  { name: 'Kedar Gunturkar',          floor: 24, flat: '' },
+  { name: 'Mandar Khatkhate',         floor: 25, flat: '2502-03' },
+  { name: 'Purva Kakade',             floor: 26, flat: '2607' },
+  { name: 'Vaibhav Kulkarni',         floor: 27, flat: '2707' },
+  { name: 'Jitendra Naik',            floor: 28, flat: '2802' },
+  { name: 'Hasmukh Chavda',           floor: 29, flat: '' },
+  { name: 'Arjun Gajra',              floor: 32, flat: '' },
+  { name: 'Kalpesh',                  floor: 33, flat: '3303' },
+  { name: 'Sumit',                    floor: 33, flat: '3308' },
+  { name: 'Khushali Bayani',          floor: 34, flat: '3410' },
+  { name: 'Mithun Pednekar',          floor: 35, flat: '3505' },
+  { name: 'Meghna Pednekar',          floor: 35, flat: '3505' }
+];
+
 (function () {
   function escape(s) {
     return String(s)
@@ -78,6 +123,12 @@ window.REPRESENTATIVES = [
     return flat.indexOf('·') >= 0
       ? flat.split('·').map(function (f) { return 'Flat ' + f.trim(); }).join(' · ')
       : 'Flat ' + flat;
+  }
+
+  function ordinal(n) {
+    var s = ['th', 'st', 'nd', 'rd'];
+    var v = n % 100;
+    return n + (s[(v - 20) % 10] || s[v] || s[0]);
   }
 
   function photoMarkup(rep) {
@@ -114,8 +165,30 @@ window.REPRESENTATIVES = [
     }).join('');
   }
 
+  function renderFloors(target) {
+    var list = window.FLOOR_REPRESENTATIVES || [];
+    var sorted = list.slice().sort(function (a, b) {
+      return (a.floor - b.floor) || a.name.localeCompare(b.name);
+    });
+    target.innerHTML = sorted.map(function (rep) {
+      var flatLine = rep.flat
+        ? '<p class="rep-flat">' + escape(flatLabel(rep.flat)) + '</p>'
+        : '';
+      return '<div class="rep-card">' +
+        photoMarkup(rep) +
+        '<div class="rep-body">' +
+          '<p class="rep-name">' + escape(rep.name) + '</p>' +
+          '<p class="rep-dept">' + escape(ordinal(rep.floor)) + ' Floor</p>' +
+          flatLine +
+        '</div>' +
+      '</div>';
+    }).join('');
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     var target = document.getElementById('repList');
     if (target) render(target);
+    var floorTarget = document.getElementById('floorRepList');
+    if (floorTarget) renderFloors(floorTarget);
   });
 })();
