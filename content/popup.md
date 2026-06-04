@@ -43,16 +43,24 @@
 
 <!-- ─── POPUP CONTENT START — edit below this line. Keep this marker as-is. ─── -->
 
-title: Water Supply Schedule – 04 June 2026
+title: Water Supply Update
 icon: 🚰
 accent: blue
 
-Please note the water supply timings for tomorrow:
+Hi All,
 
-Morning: 10:00 AM to 10:30 AM
-Evening: will update
+We will be releasing water at 7:00 PM. Our intention is to keep the water supply running continuously instead of shutting it off after a fixed duration. However, this will only be possible with the support and cooperation of all residents.
 
-Residents are requested to plan accordingly and use water judiciously.
+For today, we request everyone to use water judiciously:
+
+Please keep taps closed when not in use.
+Avoid running washing machines and dishwashers if possible.
+Refrain from any heavy or non-essential water usage.
+
+Let's all work together and enjoy uninterrupted water supply.
+
+However, if we observe excessive water consumption today, we may have no option but to shut off the water supply within an hour to ensure fair distribution for everyone.
+
 <!--
 ─── EXAMPLES (these are commented out — uncomment to use) ───
 
