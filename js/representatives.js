@@ -65,7 +65,7 @@ window.REPRESENTATIVES = [
 
    Sample data below — replace with real names when you have them. */
 window.FLOOR_REPRESENTATIVES = [
-  { name: 'Vivek Chhabra',            floor: 1,  flat: '102' },
+  { name: 'Vivek Chhabra',            floor: 1,  flat: '103' },
   { name: 'Avinashi Mane',            floor: 3,  flat: '303' },
   { name: 'Sachin Patil',             floor: 6,  flat: '603' },
   { name: 'Abhishek Mane',            floor: 7,  flat: '704' },
