@@ -49,7 +49,7 @@ accent: blue
 
 Please note the water supply timings for tomorrow:
 
-Morning: 5:00 AM to 7:30 AM
+Morning: 10:00 AM to 10:30 AM
 Evening: will update
 
 Residents are requested to plan accordingly and use water judiciously.
