@@ -24,10 +24,10 @@ window.REPRESENTATIVES = [
     photos: ['avinash.jpg', 'tejas.jpg', 'pankaj.jpeg']
   },
   {
-    name: 'Jitendra Naik & Sourabh Ghosh',
+    name: 'Jitendra Naik, Pankaj Rane & Sourabh Ghosh',
     dept: 'Lift',
-    flat: '2802 · 1908',
-    photos: ['jitendra.jpeg', 'sourabh.jpg']
+    flat: '2802 ·1809 · 1908',
+    photos: ['jitendra.jpeg', 'pankaj.jpeg', 'sourabh.jpg']
   },
   {
     name: 'Kalpesh Mavlankar',
