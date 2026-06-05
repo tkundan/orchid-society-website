@@ -18,10 +18,10 @@ window.REPRESENTATIVES = [
     photo: 'aditya.jpg'
   },
   {
-    name: 'Avinash Mane, Tejas Dalvee & Pankaj Rane',
+    name: 'Avinash Mane & Tejas Dalvee',
     dept: 'Water Management',
-    flat: '303 · 2807 · 1809',
-    photos: ['avinash.jpg', 'tejas.jpg', 'pankaj.jpeg']
+    flat: '303 · 2807 ',
+    photos: ['avinash.jpg', 'tejas.jpg']
   },
   {
     name: 'Jitendra Naik, Pankaj Rane & Sourabh Ghosh',
