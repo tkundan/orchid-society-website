@@ -43,11 +43,6 @@
 
 <!-- ─── POPUP CONTENT START — edit below this line. Keep this marker as-is. ─── -->
 
-title: Water Supply Schedule 05th June
-icon: 🚰
-accent: blue
- 
-The water supply will resume at 6:00 AM tomorrow morning. 
 
 
 <!--
