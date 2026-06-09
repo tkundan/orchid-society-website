@@ -43,10 +43,7 @@
 
 <!-- ─── POPUP CONTENT START — edit below this line. Keep this marker as-is. ─── -->
 
-Today's Water Supply
 
-- Morning water supply will be available until 8:30 AM.
-- Evening water supply will be available from 7:30 PM to 8:30 PM.
 
 <!--
 ─── EXAMPLES (these are commented out — uncomment to use) ───
