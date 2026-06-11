@@ -66,13 +66,13 @@ window.REPRESENTATIVES = [
    Sample data below — replace with real names when you have them. */
 window.FLOOR_REPRESENTATIVES = [
   { name: 'Vivek Chhabra',            floor: 1,  flat: '103', photo: 'vivek.jpeg' },
-  { name: 'Shailesh Agrawal',         floor: 2,  flat: '203' },
+  { name: 'Shailesh Agrawal',         floor: 2,  flat: '208', photo: 'shailesh.jpg' },
   { name: 'Avinashi Mane',            floor: 3,  flat: '303', photo: 'avinash.jpg' },
   { name: 'Sachin Patil',             floor: 6,  flat: '603', photo: 'chairman.jpg' },
   { name: 'Abhishek Mane',            floor: 7,  flat: '704' },
   { name: 'Tushar',                   floor: 7,  flat: '710', photo: 'tushar.jpeg' },
   { name: 'Santosh Pendurkar',        floor: 8,  flat: '804' },
-  { name: 'Deepak Phalke',            floor: 9,  flat: '911' },
+  { name: 'Deepak Phalke',            floor: 9,  flat: '911', photo: 'deepak.jpg' },
   { name: 'Kundan Thakur',            floor: 11, flat: '1108', photo: 'kundan.jpg' },
   { name: 'Kartik Negandhi',          floor: 13, flat: '' },
   { name: 'Swapnil Mokal',            floor: 13, flat: '1303' },
