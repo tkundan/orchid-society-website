@@ -74,6 +74,7 @@ window.FLOOR_REPRESENTATIVES = [
   { name: 'Santosh Pendurkar',        floor: 8,  flat: '804' },
   { name: 'Deepak Phalke',            floor: 9,  flat: '911', photo: 'deepak.jpg' },
   { name: 'Kundan Thakur',            floor: 11, flat: '1108', photo: 'kundan.jpg' },
+  { name: 'Hitesh Jayantilal Jain',   floor: 12, flat: '1202', photo: 'hitesh.jpg' },
   { name: 'Kartik Negandhi',          floor: 13, flat: '' },
   { name: 'Swapnil Mokal',            floor: 13, flat: '1303' },
   { name: 'Gautam',                   floor: 17, flat: '' },
