@@ -36,10 +36,10 @@ window.REPRESENTATIVES = [
     photo: 'kalpesh.jpg'
   },
   {
-    name: 'Rakesh Patil',
-    dept: 'Water Pipeline',
+    name: 'Onkar Suryavanshi',
+    dept: 'Water Pipeline & Sewage',
     flat: '2208',
-    photo: 'rakesh.jpg'
+    photo: 'onkar.jpg'
   },
   {
     name: 'Sumit Tewari',
@@ -67,7 +67,7 @@ window.REPRESENTATIVES = [
 window.FLOOR_REPRESENTATIVES = [
   { name: 'Vivek Chhabra',            floor: 1,  flat: '103', photo: 'vivek.jpeg' },
   { name: 'Shailesh Agrawal',         floor: 2,  flat: '208', photo: 'shailesh.jpg' },
-  { name: 'Avinashi Mane',            floor: 3,  flat: '303', photo: 'avinash.jpg' },
+  { name: 'Avinashi Mane',            floor: 3,  flat: '305', photo: 'avinash.jpg' },
   { name: 'Sachin Patil',             floor: 6,  flat: '603', photo: 'chairman.jpg' },
   { name: 'Abhishek Mane',            floor: 7,  flat: '704' },
   { name: 'Tushar',                   floor: 7,  flat: '710', photo: 'tushar.jpeg' },
@@ -77,11 +77,11 @@ window.FLOOR_REPRESENTATIVES = [
   { name: 'Hitesh Jayantilal Jain',   floor: 12, flat: '1202', photo: 'hitesh.jpg' },
   { name: 'Kartik Negandhi',          floor: 13, flat: '' },
   { name: 'Swapnil Mokal',            floor: 13, flat: '1303' },
-  { name: 'Gautam',                   floor: 17, flat: '' },
+  { name: 'Gautam',                   floor: 17, flat: '', photo: 'gautam.jpg' },
   { name: 'Piya',                     floor: 17, flat: '1702-03' },
-  { name: 'Mukund Raut',              floor: 18, flat: '1810' },
+  { name: 'Mukund Raut',              floor: 18, flat: '1810', photo: 'mukund.jpg' },
   { name: 'Vinod Patil',              floor: 18, flat: '' },
-  { name: 'Onkar Suryavanshi',        floor: 19, flat: '1904' },
+  { name: 'Onkar Suryavanshi',        floor: 19, flat: '1904', photo: 'onkar.jpg' },
   { name: 'Vishal Sonavane',          floor: 20, flat: '' },
   { name: 'Nilesh Hadkar',            floor: 20, flat: '' },
   { name: 'Mangesh Shirke',           floor: 21, flat: '2109', photo: 'mangesh.jpg' },
