@@ -7,9 +7,16 @@
    It only stops casual visitors from browsing the document list.
 */
 (function () {
-  var STORAGE_KEY  = 'orchid-doc-access';
   var SESSION_HRS  = 12; // re-prompt after this many hours
+
+  // Per-page config, read from the #gate element's data attributes so multiple
+  // gated pages (documents, water report, etc.) can each have their own
+  // password file, storage key, and unlock event name.
+  var STORAGE_KEY  = 'orchid-doc-access';
   var ACCESS_FILE  = 'content/access.txt';
+  var UNLOCK_EVENT = 'orchid:unlocked';
+  var GATE_TITLE   = 'Residents Only';
+  var GATE_HINT    = 'Enter the access code to view society documents.';
 
   function unlocked() {
     try {
@@ -46,8 +53,8 @@
     target.innerHTML =
       '<div class="gate">' +
         '<div class="gate-icon">🔒</div>' +
-        '<h2>Residents Only</h2>' +
-        '<p class="gate-hint">Enter the access code to view society documents.</p>' +
+        '<h2>' + GATE_TITLE + '</h2>' +
+        '<p class="gate-hint">' + GATE_HINT + '</p>' +
         '<form class="gate-form" id="gateForm">' +
           '<input type="password" inputmode="numeric" autocomplete="off" ' +
                  'class="gate-input" id="gateInput" placeholder="Access code" autofocus>' +
@@ -100,13 +107,18 @@
       showGate(target);
     });
 
-    // Tell documents.js to render now that #documentList exists
-    document.dispatchEvent(new CustomEvent('orchid:unlocked'));
+    // Tell the page-specific script to render now that #documentList exists
+    document.dispatchEvent(new CustomEvent(UNLOCK_EVENT));
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     var target = document.getElementById('gate');
     if (!target) return;
+    if (target.dataset.storageKey)  STORAGE_KEY  = target.dataset.storageKey;
+    if (target.dataset.accessFile)  ACCESS_FILE  = target.dataset.accessFile;
+    if (target.dataset.unlockEvent) UNLOCK_EVENT = target.dataset.unlockEvent;
+    if (target.dataset.gateTitle)   GATE_TITLE   = target.dataset.gateTitle;
+    if (target.dataset.gateHint)    GATE_HINT    = target.dataset.gateHint;
     if (unlocked()) {
       unlock(target);
     } else {

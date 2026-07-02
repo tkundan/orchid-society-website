@@ -1112,6 +1112,57 @@ h2 {
 .doc-error p { margin-bottom: 4px; }
 .doc-error p:last-child { margin-bottom: 0; }
 
+/* ── WATER REPORTS ── */
+.water-grid {
+  display: grid;
+  gap: 24px;
+}
+
+.water-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+}
+
+.water-card:hover {
+  border-color: var(--green-light);
+  box-shadow: 0 10px 28px rgba(27,67,50,0.08);
+  transform: translateY(-1px);
+}
+
+.water-preview {
+  display: block;
+  background: var(--green-pale);
+  border-bottom: 1px solid var(--border);
+  line-height: 0;
+}
+
+.water-preview img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.water-body {
+  padding: 18px 22px 22px;
+}
+
+.water-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--green-dark);
+  margin-bottom: 4px;
+}
+
+.water-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
 /* ── PASSWORD GATE ── */
 .gate {
   max-width: 440px;
