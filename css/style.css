@@ -1771,3 +1771,20 @@ footer small { font-size: 0.78rem; opacity: 0.5; }
   .hero { padding: 26px 16px; }
   .hero-strip { gap: 24px; margin-top: 18px; padding-top: 16px; }
 }
+
+/* Water tank layout figure */
+.tank-layout {
+  margin: 24px 0 0;
+  background: #fff;
+  border-radius: 14px;
+  padding: 12px;
+  box-shadow: 0 12px 40px rgba(27,67,50,0.10);
+  overflow: hidden;
+}
+.tank-layout img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
