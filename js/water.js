@@ -155,9 +155,19 @@
 
   function tryInit() {
     var target = document.getElementById('documentList');
-    if (target) init(target);
+    if (!target) return;      // Still locked — gate hasn't rendered the list yet.
+    init(target);
+    showTankLayout(true);
+  }
+
+  function showTankLayout(show) {
+    var section = document.getElementById('tankLayoutSection');
+    if (section) section.hidden = !show;
   }
 
   document.addEventListener('DOMContentLoaded', tryInit);
   document.addEventListener('orchid:water-unlocked', tryInit);
+  document.addEventListener('orchid:water-locked', function () {
+    showTankLayout(false);
+  });
 })();

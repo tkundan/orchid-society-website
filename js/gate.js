@@ -15,6 +15,7 @@
   var STORAGE_KEY  = 'orchid-doc-access';
   var ACCESS_FILE  = 'content/access.txt';
   var UNLOCK_EVENT = 'orchid:unlocked';
+  var LOCK_EVENT   = 'orchid:locked';
   var GATE_TITLE   = 'Residents Only';
   var GATE_HINT    = 'Enter the access code to view society documents.';
 
@@ -105,6 +106,7 @@
     document.getElementById('gateLogout').addEventListener('click', function () {
       clearSession();
       showGate(target);
+      document.dispatchEvent(new CustomEvent(LOCK_EVENT));
     });
 
     // Tell the page-specific script to render now that #documentList exists
@@ -117,6 +119,7 @@
     if (target.dataset.storageKey)  STORAGE_KEY  = target.dataset.storageKey;
     if (target.dataset.accessFile)  ACCESS_FILE  = target.dataset.accessFile;
     if (target.dataset.unlockEvent) UNLOCK_EVENT = target.dataset.unlockEvent;
+    if (target.dataset.lockEvent)   LOCK_EVENT   = target.dataset.lockEvent;
     if (target.dataset.gateTitle)   GATE_TITLE   = target.dataset.gateTitle;
     if (target.dataset.gateHint)    GATE_HINT    = target.dataset.gateHint;
     if (unlocked()) {
