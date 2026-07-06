@@ -48,6 +48,12 @@ window.REPRESENTATIVES = [
     photo: 'sumit.jpeg'
   },
   {
+    name: 'Vaibhav Kulkarni, Hasmukh Chavda & Shailesh Agrawal',
+    dept: 'Two-Wheeler Parking Management Team',
+    flat: '2707 ·2911 · 0208',
+    photos: ['vaibhav.jpg', 'hashmukh.jpg', 'shailesh.jpg']
+  },
+  {
     name: 'Tushar Chandar',
     dept: 'Fire Department',
     flat: '710',
