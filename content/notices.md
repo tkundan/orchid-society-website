@@ -19,12 +19,11 @@ All residents are requested to complete their biometric face scan entry registra
 > [Register Now](https://docs.google.com/forms/d/e/1FAIpQLScIUr8Vaw7O0UqhCoy6mGqCZACJuTkND_Lm62wpwTRF0OZ1uQ/viewform)
 
 
-## Register a Complaint
-icon: 📝
+## FaceScan Access — Security Update
+icon: 🛡️
+urgent: true
 
-Submit maintenance issues, society concerns, or any grievances directly to the manager.
-
-> [Open Form](https://docs.google.com/forms/d/e/1FAIpQLSdMNdAE-oISQy_exnzV8wM-1nME6tuuslcXuHegDLXkDJI_Lw/viewform)
+We have the FaceScan system implemented on S, BS and P. From **15th July 2026 onwards**, no security guard will be available on BS. Please make sure your FaceScan access — especially your FS on BS — is properly working. You may contact Chandan or our manager anytime if you face any problem.
 
 
 ## Important Email IDs
