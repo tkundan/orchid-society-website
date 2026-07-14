@@ -1,1 +1,6 @@
-1982
+# Access codes for the Documents page.
+# Format: Name:Code   (one per line)
+# Lines starting with # are ignored. Blank lines are ignored.
+# To revoke access, delete or comment out the line and commit.
+Kundan:0007
+Chandan:1982
