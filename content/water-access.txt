@@ -4,3 +4,20 @@
 # To revoke access, delete or comment out the line and commit.
 Kundan:0007
 Chandan:1982
+Aditya:2309
+Avinash:0303
+Jitendra:2802
+Sourabh:1908
+Sumit:3308
+Vaibhav:2707
+Tushar:0710
+Kalpesh:3303
+Onkar:1904
+Pankaj:1809
+Hasmukh:2911
+Shailesh:0208
+Mangesh:2109
+Sachin:0603
+Vivek:0103
+Khushali:3410
+Hitesh:1202
