@@ -34,6 +34,41 @@
   </div>
 </div>
 
+<!-- FEATURED FILM -->
+<section class="film-section">
+  <div class="container">
+    <div class="film-head">
+      <p class="section-label film-label">🎬 Featured Film</p>
+      <h2>The Orchid Journey</h2>
+      <div class="divider"></div>
+      <p class="film-lede">From foundation to flourishing community — a cinematic look at how Orchid became home.</p>
+    </div>
+
+    <figure class="film-stage" id="filmStage">
+      <video id="orchidFilm"
+             class="film-video"
+             poster="assets/video/orchid-journey-poster.jpg"
+             preload="none"
+             playsinline
+             controls
+             controlslist="nodownload">
+        <source src="assets/video/orchid-journey.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+
+      <button type="button" class="film-play" id="filmPlay" aria-label="Play the Orchid Journey film">
+        <span class="film-play-ring"></span>
+        <span class="film-play-icon">&#9658;</span>
+      </button>
+
+      <div class="film-meta" id="filmMeta">
+        <span class="film-badge">▶ Watch now</span>
+        <span class="film-runtime">5 min film</span>
+      </div>
+    </figure>
+  </div>
+</section>
+
 <!-- QUICK LINK TILES -->
 <section style="padding-top: 20px;">
   <div class="container">
@@ -157,6 +192,24 @@
       clearInterval(timer);
       timer = setInterval(next, 5000);
     }
+  })();
+</script>
+<script>
+  (function () {
+    var stage = document.getElementById('filmStage');
+    var video = document.getElementById('orchidFilm');
+    var play  = document.getElementById('filmPlay');
+    if (!stage || !video || !play) return;
+
+    function start() {
+      stage.classList.add('is-playing');
+      video.play().catch(function () {});
+    }
+    play.addEventListener('click', start);
+    video.addEventListener('play', function () { stage.classList.add('is-playing'); });
+    video.addEventListener('pause', function () {
+      if (video.currentTime === 0 || video.ended) stage.classList.remove('is-playing');
+    });
   })();
 </script>
 <script src="js/popup.js"></script>
