@@ -18,7 +18,7 @@ window.REPRESENTATIVES = [
     photo: 'aditya.jpg'
   },
   {
-    name: 'Avinash Mane & Tejas Dalvee',
+    name: 'Avinash Mane & Tejas Dalvi',
     dept: 'Water Management',
     flat: '305 · 2807 ',
     photos: ['avinash.jpg', 'tejas.jpg']
